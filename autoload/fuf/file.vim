@@ -45,7 +45,6 @@ endfunction
 " LOCAL FUNCTIONS/VARIABLES {{{1
 
 let s:MODE_NAME = expand('<sfile>:t:r')
-echo s:MODE_NAME
 
 "
 function s:enumItems(dir)
