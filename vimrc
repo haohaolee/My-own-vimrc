@@ -148,7 +148,10 @@ else
 endif
 
 set encoding=utf8
-lang en_US
+try
+    lang en_US
+catch
+endtry
 
 set ffs=unix,dos,mac "Default file types
 
@@ -494,8 +497,11 @@ endfunction
 """"""""""""""""""""""""""""""
 " => Fuzzy finder
 """"""""""""""""""""""""""""""
-call fuf#defineLaunchCommand('FufCWD', 'file', 'fnamemodify(getcwd(), ''%:p:h'')')
-map <leader>t :FufCWD **/<CR>
+try
+    call fuf#defineLaunchCommand('FufCWD', 'file', 'fnamemodify(getcwd(), ''%:p:h'')')
+    map <leader>t :FufCWD **/<CR>
+catch
+endtry
 
 
 """"""""""""""""""""""""""""""
