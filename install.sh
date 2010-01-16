@@ -3,5 +3,11 @@ if [ "$1" == "" ]; then
   echo "       <system> can be 'mac', 'linux' or 'windows'"
   exit 1
 fi
-echo "fun! MySys()\nreturn \"$1\"\nendfun\nset runtimepath=~/.vim_runtime,~/.vim_runtime/after,\$VIMRUNTIME\nsource ~/.vim_runtime/vimrc\nhelptags ~/.vim_runtime/doc" > ~/.vimrc
+echo '
+fun! MySys()
+   return "$1"
+endfun
+set runtimepath=~/.vim_runtime,~/.vim_runtime/after,\$VIMRUNTIME
+source ~/.vim_runtime/vimrc
+helptags ~/.vim_runtime/doc' > ~/.vimrc
 echo "Installed amix's vim configuration successfully! Enjoy :)"
