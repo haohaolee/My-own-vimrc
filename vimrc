@@ -14,8 +14,8 @@
 " How_to_Install:
 "    $ mkdir ~/.vim_runtime
 "    $ svn co svn://orangoo.com/vim ~/.vim_runtime
-"    $ cat ~/.vim_runtime/install
-"    $ sh ~/.vim_runtime/install <system>
+"    $ cat ~/.vim_runtime/install.sh
+"    $ sh ~/.vim_runtime/install.sh <system>
 "      <sytem> can be `mac`, `linux` or `windows`
 "
 " How_to_Upgrade:
