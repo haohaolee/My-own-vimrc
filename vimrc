@@ -1,8 +1,15 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: amix - amix.dk - amix@amix.dk
+" Maintainer: amix the lucky stiff
+"             http://amix.dk - amix@amix.dk
 "
-" Version: 3.0
-" Last Change: 16/01/10 01:10:33
+" Version: 3.0 - 17/01/10 00:50:00
+"
+" Blog_post: 
+"       http://amix.dk/blog/post/19486#The-ultimative-vim-configuration-vimrc
+" Syntax_highlighted:
+"       http://amix.dk/vim/vimrc.html
+" Raw_version: 
+"       http://amix.dk/vim/vimrc.txt
 "
 " How_to_Install:
 "    $ mkdir ~/.vim_runtime
@@ -15,24 +22,24 @@
 "    $ svn update ~/.vim_runtime
 "
 " Sections:
-"     > General
-"     > VIM user interface
-"     > Colors and Fonts
-"     > Files and backups
-"     > Text, tab and indent related
-"     > Visual mode related
-"     > Command mode related
-"     > Moving around, tabs and buffers
-"     > Statusline
-"     > Parenthesis/bracket expanding
-"     > General Abbrevs
-"     > Editing mappings
+"    -> General
+"    -> VIM user interface
+"    -> Colors and Fonts
+"    -> Files and backups
+"    -> Text, tab and indent related
+"    -> Visual mode related
+"    -> Command mode related
+"    -> Moving around, tabs and buffers
+"    -> Statusline
+"    -> Parenthesis/bracket expanding
+"    -> General Abbrevs
+"    -> Editing mappings
 "
-"     > Cope
-"     > Minibuffer plugin
-"     > Omni complete functions
-"     > Python section
-"     > JavaScript section
+"    -> Cope
+"    -> Minibuffer plugin
+"    -> Omni complete functions
+"    -> Python section
+"    -> JavaScript section
 "
 " Plugins_Included:
 "     > minibufexpl.vim - http://www.vim.org/scripts/script.php?script_id=159
@@ -195,7 +202,7 @@ vnoremap <silent> # :call VisualSearch('b')<CR>
 
 " When you press gv you vimgrep after the selected text
 vnoremap <silent> gv :call VisualSearch('gv')<CR>
-map gv :vimgrep // **/*.<left><left><left><left><left><left><left>
+map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 
 
 function! CmdLine(str)
@@ -286,6 +293,7 @@ endfunc
 " Map space to / (search) and c-space to ? (backgwards search)
 map <space> /
 map <c-space> ?
+map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move btw. windows
 map <C-j> <C-W>j
@@ -446,8 +454,10 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
+"Shortcuts using <leader>
 map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
@@ -516,3 +526,6 @@ set grepprg=/bin/grep\ -nH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+"Quickly open a buffer for scripbble
+map <leader>q :e ~/buffer<cr>
