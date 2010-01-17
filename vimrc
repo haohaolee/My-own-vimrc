@@ -2,7 +2,7 @@
 " Maintainer: amix the lucky stiff
 "             http://amix.dk - amix@amix.dk
 "
-" Version: 3.0 - 17/01/10 00:50:00
+" Version: 3.1 - 17/01/10 19:34:18
 "
 " Blog_post: 
 "       http://amix.dk/blog/post/19486#The-ultimative-vim-configuration-vimrc
@@ -43,19 +43,31 @@
 "
 " Plugins_Included:
 "     > minibufexpl.vim - http://www.vim.org/scripts/script.php?script_id=159
-"       info -> :e ~/.vim_runtime/plugin/minibufexpl.vim
+"       Makes it easy to get an overview of buffers:
+"           info -> :e ~/.vim_runtime/plugin/minibufexpl.vim
+"
+"     > bufexplorer - http://www.vim.org/scripts/script.php?script_id=42
+"       Makes it easy to switch between buffers:
+"           info -> :help bufExplorer
 "
 "     > yankring.vim - http://www.vim.org/scripts/script.php?script_id=1234
-"       info -> :help yankring
-"
-"     > snipMate.vim - http://www.vim.org/scripts/script.php?script_id=2540
-"       info -> :help snipMate
+"       Emacs's killring, useful when using the clipboard:
+"           info -> :help yankring
 "
 "     > surround.vim - http://www.vim.org/scripts/script.php?script_id=1697
-"       info -> :help surround
+"       Makes it easy to work with surrounding text:
+"           info -> :help surround
+"
+"     > snipMate.vim - http://www.vim.org/scripts/script.php?script_id=2540
+"       Snippets for many languages (similar to TextMate's):
+"           info -> :help snipMate
 "
 "     > fuzzyfinder - http://www.vim.org/scripts/script.php?script_id=1984
-"       info -> :help fuzzyfinder@en
+"       Find files fast (similar to TextMate's feature):
+"           info -> :help fuzzyfinder@en
+"
+"  Revisions:
+"     > 3.1: Added revisions ;) and bufexplorer.vim
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -425,6 +437,13 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 map <leader>cc :botright cope<cr>
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
+
+
+""""""""""""""""""""""""""""""
+" => bufExplorer plugin
+""""""""""""""""""""""""""""""
+let g:bufExplorerDefaultHelp=0
+let g:bufExplorerShowRelativePath=1
 
 
 """"""""""""""""""""""""""""""
