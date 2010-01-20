@@ -2,7 +2,7 @@
 " Maintainer: amix the lucky stiff
 "             http://amix.dk - amix@amix.dk
 "
-" Version: 3.1 - 17/01/10 19:34:18
+" Version: 3.2 - 17/01/10 20:40:03
 "
 " Blog_post: 
 "       http://amix.dk/blog/post/19486#The-ultimative-vim-configuration-vimrc
@@ -67,6 +67,8 @@
 "           info -> :help fuzzyfinder@en
 "
 "  Revisions:
+"     > 3.2: Truned on python_highlight_all for better syntax
+"            highlighting for Python
 "     > 3.1: Added revisions ;) and bufexplorer.vim
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -487,13 +489,18 @@ map <leader>s? z=
 " => Python section
 """"""""""""""""""""""""""""""
 au FileType python set nocindent
-syn keyword pythonConstant True None False self
+let python_highlight_all = 1
+au FileType python syn keyword pythonDecorator True None False self
+
 au BufNewFile,BufRead *.jinja set syntax=htmljinja
+au BufNewFile,BufRead *.mako set ft=mako
 
 au FileType python inoremap <buffer> $r return 
 au FileType python inoremap <buffer> $i import 
 au FileType python inoremap <buffer> $p print 
 au FileType python inoremap <buffer> $f #--- PH ----------------------------------------------<esc>FP2xi
+au FileType python map <buffer> <leader>1 /class 
+au FileType python map <buffer> <leader>2 /def 
 au FileType python map <buffer> <leader>C ?class 
 au FileType python map <buffer> <leader>D ?def 
 
