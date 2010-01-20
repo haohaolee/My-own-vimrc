@@ -2,10 +2,10 @@
 " Maintainer: amix the lucky stiff
 "             http://amix.dk - amix@amix.dk
 "
-" Version: 3.2 - 17/01/10 20:40:03
+" Version: 3.3 - 21/01/10 01:05:46
 "
 " Blog_post: 
-"       http://amix.dk/blog/post/19486#The-ultimative-vim-configuration-vimrc
+"       http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc
 " Syntax_highlighted:
 "       http://amix.dk/vim/vimrc.html
 " Raw_version: 
@@ -67,7 +67,8 @@
 "           info -> :help fuzzyfinder@en
 "
 "  Revisions:
-"     > 3.2: Truned on python_highlight_all for better syntax
+"     > 3.3: Added syntax highlighting for Mako mako.vim 
+"     > 3.2: Turned on python_highlight_all for better syntax
 "            highlighting for Python
 "     > 3.1: Added revisions ;) and bufexplorer.vim
 "
