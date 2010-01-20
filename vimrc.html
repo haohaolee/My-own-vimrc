@@ -1,568 +1,568 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>~/.vim_runtime/vimrc.html</title>
+<title>The ultimate Vim configuration (vimrc)</title>
 <meta name="Generator" content="Vim/7.2">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 </head>
 <body bgcolor="#202020" text="#d0d0d0"><font face="monospace">
-<font color="#b0b0b0">&nbsp;&nbsp;1 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">&nbsp;&nbsp;2 </font><font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Maintainer:</font><font color="#d0d090">&nbsp;amix the lucky stiff</font><br>
-<font color="#b0b0b0">&nbsp;&nbsp;3 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://amix.dk">http://amix.dk</a> - amix@amix.dk</font><br>
-<font color="#b0b0b0">&nbsp;&nbsp;4 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;&nbsp;5 </font><font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Version:</font><font color="#d0d090">&nbsp;3.3 - 21/01/10 01:05:46</font><br>
-<font color="#b0b0b0">&nbsp;&nbsp;6 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;&nbsp;7 </font><font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Blog_post:</font><font color="#d0d090">&nbsp;</font><br>
-<font color="#b0b0b0">&nbsp;&nbsp;8 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc">http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc</a></font><br>
-<font color="#b0b0b0">&nbsp;&nbsp;9 </font><font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Syntax_highlighted:</font><br>
-<font color="#b0b0b0">&nbsp;10 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://amix.dk/vim/vimrc.html">http://amix.dk/vim/vimrc.html</a></font><br>
-<font color="#b0b0b0">&nbsp;11 </font><font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Raw_version:</font><font color="#d0d090">&nbsp;</font><br>
-<font color="#b0b0b0">&nbsp;12 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://amix.dk/vim/vimrc.txt">http://amix.dk/vim/vimrc.txt</a></font><br>
-<font color="#b0b0b0">&nbsp;13 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;14 </font><font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">How_to_Install:</font><br>
-<font color="#b0b0b0">&nbsp;15 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;$ mkdir ~/.vim_runtime</font><br>
-<font color="#b0b0b0">&nbsp;16 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;$ svn co svn://orangoo.com/vim ~/.vim_runtime</font><br>
-<font color="#b0b0b0">&nbsp;17 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;$ cat ~/.vim_runtime/install.sh</font><br>
-<font color="#b0b0b0">&nbsp;18 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;$ sh ~/.vim_runtime/install.sh &lt;system&gt;</font><br>
-<font color="#b0b0b0">&nbsp;19 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sytem&gt; can be `mac`, `linux` or `windows`</font><br>
-<font color="#b0b0b0">&nbsp;20 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;21 </font><font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">How_to_Upgrade:</font><br>
-<font color="#b0b0b0">&nbsp;22 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;$ svn update ~/.vim_runtime</font><br>
-<font color="#b0b0b0">&nbsp;23 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;24 </font><font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Sections:</font><br>
-<font color="#b0b0b0">&nbsp;25 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; General</font><br>
-<font color="#b0b0b0">&nbsp;26 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; VIM user interface</font><br>
-<font color="#b0b0b0">&nbsp;27 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Colors and Fonts</font><br>
-<font color="#b0b0b0">&nbsp;28 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Files and backups</font><br>
-<font color="#b0b0b0">&nbsp;29 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Text, tab and indent related</font><br>
-<font color="#b0b0b0">&nbsp;30 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Visual mode related</font><br>
-<font color="#b0b0b0">&nbsp;31 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Command mode related</font><br>
-<font color="#b0b0b0">&nbsp;32 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Moving around, tabs and buffers</font><br>
-<font color="#b0b0b0">&nbsp;33 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Statusline</font><br>
-<font color="#b0b0b0">&nbsp;34 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Parenthesis/bracket expanding</font><br>
-<font color="#b0b0b0">&nbsp;35 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; General Abbrevs</font><br>
-<font color="#b0b0b0">&nbsp;36 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Editing mappings</font><br>
-<font color="#b0b0b0">&nbsp;37 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;38 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Cope</font><br>
-<font color="#b0b0b0">&nbsp;39 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Minibuffer plugin</font><br>
-<font color="#b0b0b0">&nbsp;40 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Omni complete functions</font><br>
-<font color="#b0b0b0">&nbsp;41 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Python section</font><br>
-<font color="#b0b0b0">&nbsp;42 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; JavaScript section</font><br>
-<font color="#b0b0b0">&nbsp;43 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;44 </font><font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Plugins_Included:</font><br>
-<font color="#b0b0b0">&nbsp;45 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; minibufexpl.vim - <a href="http://www.vim.org/scripts/script.php?script_id=159">http://www.vim.org/scripts/script.php?script_id=159</a></font><br>
-<font color="#b0b0b0">&nbsp;46 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Makes it easy to get an overview of buffers:</font><br>
-<font color="#b0b0b0">&nbsp;47 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info -&gt; :e ~/.vim_runtime/plugin/minibufexpl.vim</font><br>
-<font color="#b0b0b0">&nbsp;48 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;49 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; bufexplorer - <a href="http://www.vim.org/scripts/script.php?script_id=42">http://www.vim.org/scripts/script.php?script_id=42</a></font><br>
-<font color="#b0b0b0">&nbsp;50 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Makes it easy to switch between buffers:</font><br>
-<font color="#b0b0b0">&nbsp;51 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info -&gt; :help bufExplorer</font><br>
-<font color="#b0b0b0">&nbsp;52 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;53 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; yankring.vim - <a href="http://www.vim.org/scripts/script.php?script_id=1234">http://www.vim.org/scripts/script.php?script_id=1234</a></font><br>
-<font color="#b0b0b0">&nbsp;54 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Emacs's killring, useful when using the clipboard:</font><br>
-<font color="#b0b0b0">&nbsp;55 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info -&gt; :help yankring</font><br>
-<font color="#b0b0b0">&nbsp;56 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;57 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; surround.vim - <a href="http://www.vim.org/scripts/script.php?script_id=1697">http://www.vim.org/scripts/script.php?script_id=1697</a></font><br>
-<font color="#b0b0b0">&nbsp;58 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Makes it easy to work with surrounding text:</font><br>
-<font color="#b0b0b0">&nbsp;59 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info -&gt; :help surround</font><br>
-<font color="#b0b0b0">&nbsp;60 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;61 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; snipMate.vim - <a href="http://www.vim.org/scripts/script.php?script_id=2540">http://www.vim.org/scripts/script.php?script_id=2540</a></font><br>
-<font color="#b0b0b0">&nbsp;62 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Snippets for many languages (similar to TextMate's):</font><br>
-<font color="#b0b0b0">&nbsp;63 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info -&gt; :help snipMate</font><br>
-<font color="#b0b0b0">&nbsp;64 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;65 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; fuzzyfinder - <a href="http://www.vim.org/scripts/script.php?script_id=1984">http://www.vim.org/scripts/script.php?script_id=1984</a></font><br>
-<font color="#b0b0b0">&nbsp;66 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Find files fast (similar to TextMate's feature):</font><br>
-<font color="#b0b0b0">&nbsp;67 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info -&gt; :help fuzzyfinder@en</font><br>
-<font color="#b0b0b0">&nbsp;68 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;69 </font><font color="#d0d090">&quot;</font>&nbsp;&nbsp;<font color="#60f080">Revisions:</font><br>
-<font color="#b0b0b0">&nbsp;70 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; 3.3: Added syntax highlighting for Mako mako.vim </font><br>
-<font color="#b0b0b0">&nbsp;71 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; 3.2: Turned on python_highlight_all for better syntax</font><br>
-<font color="#b0b0b0">&nbsp;72 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;highlighting for Python</font><br>
-<font color="#b0b0b0">&nbsp;73 </font><font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; 3.1: Added revisions ;) and bufexplorer.vim</font><br>
-<font color="#b0b0b0">&nbsp;74 </font><font color="#d0d090">&quot;</font><br>
-<font color="#b0b0b0">&nbsp;75 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">&nbsp;76 </font><br>
-<font color="#b0b0b0">&nbsp;77 </font><br>
-<font color="#b0b0b0">&nbsp;78 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">&nbsp;79 </font><font color="#d0d090">&quot; =&gt; General</font><br>
-<font color="#b0b0b0">&nbsp;80 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">&nbsp;81 </font><font color="#d0d090">&quot; Sets how many lines of history VIM has to remember</font><br>
-<font color="#b0b0b0">&nbsp;82 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">history</font>=300<br>
-<font color="#b0b0b0">&nbsp;83 </font><br>
-<font color="#b0b0b0">&nbsp;84 </font><font color="#d0d090">&quot; Enable filetype plugin</font><br>
-<font color="#b0b0b0">&nbsp;85 </font><font color="#c0d8f8">filetype</font>&nbsp;<font color="#b0d0f0">plugin</font>&nbsp;<font color="#b0d0f0">on</font><br>
-<font color="#b0b0b0">&nbsp;86 </font><font color="#c0d8f8">filetype</font>&nbsp;<font color="#b0d0f0">indent</font>&nbsp;<font color="#b0d0f0">on</font><br>
-<font color="#b0b0b0">&nbsp;87 </font><br>
-<font color="#b0b0b0">&nbsp;88 </font><font color="#d0d090">&quot; Set to auto read when a file is changed from the outside</font><br>
-<font color="#b0b0b0">&nbsp;89 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">autoread</font><br>
-<font color="#b0b0b0">&nbsp;90 </font><br>
-<font color="#b0b0b0">&nbsp;91 </font><font color="#d0d090">&quot; With a map leader it's possible to do extra key combinations</font><br>
-<font color="#b0b0b0">&nbsp;92 </font><font color="#d0d090">&quot; like &lt;leader&gt;w saves the current file</font><br>
-<font color="#b0b0b0">&nbsp;93 </font><font color="#c0d8f8">let</font>&nbsp;mapleader&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#80c0e0">&quot;,&quot;</font><br>
-<font color="#b0b0b0">&nbsp;94 </font><font color="#c0d8f8">let</font>&nbsp;g:mapleader&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#80c0e0">&quot;,&quot;</font><br>
-<font color="#b0b0b0">&nbsp;95 </font><br>
-<font color="#b0b0b0">&nbsp;96 </font><font color="#d0d090">&quot; Fast saving</font><br>
-<font color="#b0b0b0">&nbsp;97 </font><font color="#c0d8f8">nmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>w&nbsp;:w!<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">&nbsp;98 </font><br>
-<font color="#b0b0b0">&nbsp;99 </font><font color="#d0d090">&quot; Fast editing of the .vimrc</font><br>
-<font color="#b0b0b0">100 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>e&nbsp;:e! ~/.vim_runtime/vimrc<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">101 </font><br>
-<font color="#b0b0b0">102 </font><font color="#d0d090">&quot; When vimrc is edited, reload it</font><br>
-<font color="#b0b0b0">103 </font><font color="#c0d8f8">autocmd</font>! <font color="#b0d0f0">bufwritepost</font>&nbsp;vimrc&nbsp;<font color="#c0d8f8">source</font>&nbsp;~/<font color="#c0d8f8">.</font>vim_runtime/vimrc<br>
-<font color="#b0b0b0">104 </font><br>
-<font color="#b0b0b0">105 </font><br>
-<font color="#b0b0b0">106 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">107 </font><font color="#d0d090">&quot; =&gt; VIM user interface</font><br>
-<font color="#b0b0b0">108 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">109 </font><font color="#d0d090">&quot; Set 7 lines to the curors - when moving vertical..</font><br>
-<font color="#b0b0b0">110 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">so</font>=7<br>
-<font color="#b0b0b0">111 </font><br>
-<font color="#b0b0b0">112 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">wildmenu</font>&nbsp;<font color="#d0d090">&quot;Turn on WiLd menu</font><br>
-<font color="#b0b0b0">113 </font><br>
-<font color="#b0b0b0">114 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">ruler</font>&nbsp;<font color="#d0d090">&quot;Always show current position</font><br>
-<font color="#b0b0b0">115 </font><br>
-<font color="#b0b0b0">116 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">cmdheight</font>=2&nbsp;<font color="#d0d090">&quot;The commandbar height</font><br>
-<font color="#b0b0b0">117 </font><br>
-<font color="#b0b0b0">118 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">hid</font>&nbsp;<font color="#d0d090">&quot;Change buffer - without saving</font><br>
-<font color="#b0b0b0">119 </font><br>
-<font color="#b0b0b0">120 </font><font color="#d0d090">&quot; Set backspace config</font><br>
-<font color="#b0b0b0">121 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">backspace</font>=eol<font color="#c0d8f8">,</font>start<font color="#c0d8f8">,</font>indent<br>
-<font color="#b0b0b0">122 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">whichwrap</font>+=<font color="#e0c060">&lt;</font><font color="#e0c060">,</font><font color="#e0c060">&gt;</font><font color="#c0d8f8">,</font>h<font color="#c0d8f8">,</font>l<br>
-<font color="#b0b0b0">123 </font><br>
-<font color="#b0b0b0">124 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">ignorecase</font>&nbsp;<font color="#d0d090">&quot;Ignore case when searching</font><br>
-<font color="#b0b0b0">125 </font><br>
-<font color="#b0b0b0">126 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">hlsearch</font>&nbsp;<font color="#d0d090">&quot;Highlight search things</font><br>
-<font color="#b0b0b0">127 </font><br>
-<font color="#b0b0b0">128 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">incsearch</font>&nbsp;<font color="#d0d090">&quot;Make search act like search in modern browsers</font><br>
-<font color="#b0b0b0">129 </font><br>
-<font color="#b0b0b0">130 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">magic</font>&nbsp;<font color="#d0d090">&quot;Set magic on, for regular expressions</font><br>
-<font color="#b0b0b0">131 </font><br>
-<font color="#b0b0b0">132 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">showmatch</font>&nbsp;<font color="#d0d090">&quot;Show matching bracets when text indicator is over them</font><br>
-<font color="#b0b0b0">133 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">mat</font>=2&nbsp;<font color="#d0d090">&quot;How many tenths of a second to blink</font><br>
-<font color="#b0b0b0">134 </font><br>
-<font color="#b0b0b0">135 </font><font color="#d0d090">&quot; No sound on errors</font><br>
-<font color="#b0b0b0">136 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">noerrorbells</font><br>
-<font color="#b0b0b0">137 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">novisualbell</font><br>
-<font color="#b0b0b0">138 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">t_vb</font>=<br>
-<font color="#b0b0b0">139 </font><br>
-<font color="#b0b0b0">140 </font><br>
-<font color="#b0b0b0">141 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">142 </font><font color="#d0d090">&quot; =&gt; Colors and Fonts</font><br>
-<font color="#b0b0b0">143 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">144 </font><font color="#c0d8f8">syntax</font>&nbsp;<font color="#b0d0f0">enable</font>&nbsp;<font color="#d0d090">&quot;Enable syntax hl</font><br>
-<font color="#b0b0b0">145 </font><br>
-<font color="#b0b0b0">146 </font><font color="#d0d090">&quot; Set font according to system</font><br>
-<font color="#b0b0b0">147 </font><font color="#c0d8f8">if</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;mac&quot;</font><br>
-<font color="#b0b0b0">148 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">gfn</font>=Bitstream\ Vera\ Sans\ Mono<font color="#c0d8f8">:</font>h13<br>
-<font color="#b0b0b0">149 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">shell</font>=/bin/bash<br>
-<font color="#b0b0b0">150 </font><font color="#c0d8f8">elseif</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;windows&quot;</font><br>
-<font color="#b0b0b0">151 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">gfn</font>=Bitstream\ Vera\ Sans\ Mono<font color="#c0d8f8">:</font>h10<br>
-<font color="#b0b0b0">152 </font><font color="#c0d8f8">elseif</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;linux&quot;</font><br>
-<font color="#b0b0b0">153 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">gfn</font>=Monospace\ 10<br>
-<font color="#b0b0b0">154 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">shell</font>=/bin/bash<br>
-<font color="#b0b0b0">155 </font><font color="#c0d8f8">endif</font><br>
-<font color="#b0b0b0">156 </font><br>
-<font color="#b0b0b0">157 </font><font color="#c0d8f8">if</font>&nbsp;<font color="#f0c0f0">has</font><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;gui_running&quot;</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">158 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">guioptions</font>-=T<br>
-<font color="#b0b0b0">159 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">background</font>=dark<br>
-<font color="#b0b0b0">160 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">t_Co</font>=256<br>
-<font color="#b0b0b0">161 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">background</font>=dark<br>
-<font color="#b0b0b0">162 </font>&nbsp;&nbsp;<font color="#c0d8f8">colorscheme</font>&nbsp;peaksea<br>
-<font color="#b0b0b0">163 </font><br>
-<font color="#b0b0b0">164 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">nu</font><br>
-<font color="#b0b0b0">165 </font><font color="#c0d8f8">else</font><br>
-<font color="#b0b0b0">166 </font>&nbsp;&nbsp;<font color="#c0d8f8">colorscheme</font>&nbsp;zellner<br>
-<font color="#b0b0b0">167 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">background</font>=dark<br>
-<font color="#b0b0b0">168 </font>&nbsp;&nbsp;<br>
-<font color="#b0b0b0">169 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">nonu</font><br>
-<font color="#b0b0b0">170 </font><font color="#c0d8f8">endif</font><br>
-<font color="#b0b0b0">171 </font><br>
-<font color="#b0b0b0">172 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">encoding</font>=utf8<br>
-<font color="#b0b0b0">173 </font><font color="#c0d8f8">try</font><br>
-<font color="#b0b0b0">174 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">lang</font>&nbsp;en_US<br>
-<font color="#b0b0b0">175 </font><font color="#c0d8f8">catch</font><br>
-<font color="#b0b0b0">176 </font><font color="#c0d8f8">endtry</font><br>
-<font color="#b0b0b0">177 </font><br>
-<font color="#b0b0b0">178 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">ffs</font>=unix<font color="#c0d8f8">,</font>dos<font color="#c0d8f8">,</font>mac&nbsp;<font color="#d0d090">&quot;Default file types</font><br>
-<font color="#b0b0b0">179 </font><br>
-<font color="#b0b0b0">180 </font><br>
-<font color="#b0b0b0">181 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">182 </font><font color="#d0d090">&quot; =&gt; Files and backups</font><br>
-<font color="#b0b0b0">183 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">184 </font><font color="#d0d090">&quot; Turn backup off, since most stuff is in SVN, git anyway...</font><br>
-<font color="#b0b0b0">185 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">nobackup</font><br>
-<font color="#b0b0b0">186 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">nowb</font><br>
-<font color="#b0b0b0">187 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">noswapfile</font><br>
-<font color="#b0b0b0">188 </font><br>
-<font color="#b0b0b0">189 </font><br>
-<font color="#b0b0b0">190 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">191 </font><font color="#d0d090">&quot; =&gt; Text, tab and indent related</font><br>
-<font color="#b0b0b0">192 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">193 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">expandtab</font><br>
-<font color="#b0b0b0">194 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">shiftwidth</font>=4<br>
-<font color="#b0b0b0">195 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">tabstop</font>=4<br>
-<font color="#b0b0b0">196 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">smarttab</font><br>
-<font color="#b0b0b0">197 </font><br>
-<font color="#b0b0b0">198 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">lbr</font><br>
-<font color="#b0b0b0">199 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">tw</font>=500<br>
-<font color="#b0b0b0">200 </font><br>
-<font color="#b0b0b0">201 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">ai</font>&nbsp;<font color="#d0d090">&quot;Auto indent</font><br>
-<font color="#b0b0b0">202 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">si</font>&nbsp;<font color="#d0d090">&quot;Smart indet</font><br>
-<font color="#b0b0b0">203 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">wrap</font>&nbsp;<font color="#d0d090">&quot;Wrap lines</font><br>
-<font color="#b0b0b0">204 </font><br>
-<font color="#b0b0b0">205 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>t2&nbsp;:setlocal shiftwidth=2<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">206 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>t4&nbsp;:setlocal shiftwidth=4<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">207 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>t8&nbsp;:setlocal shiftwidth=4<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">208 </font><br>
-<font color="#b0b0b0">209 </font><br>
-<font color="#b0b0b0">210 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">211 </font><font color="#d0d090">&quot; =&gt; Visual mode related</font><br>
-<font color="#b0b0b0">212 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">213 </font><font color="#d0d090">&quot; Really useful!</font><br>
-<font color="#b0b0b0">214 </font><font color="#d0d090">&quot;&nbsp;&nbsp;In visual mode when you press * or # to search for the current selection</font><br>
-<font color="#b0b0b0">215 </font><font color="#c0d8f8">vnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">silent</font><font color="#e0c060">&gt;</font>&nbsp;*&nbsp;:call VisualSearch('f')<font color="#e0c060">&lt;</font><font color="#e0c060">CR</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">216 </font><font color="#c0d8f8">vnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">silent</font><font color="#e0c060">&gt;</font>&nbsp;#&nbsp;:call VisualSearch('b')<font color="#e0c060">&lt;</font><font color="#e0c060">CR</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">217 </font><br>
-<font color="#b0b0b0">218 </font><font color="#d0d090">&quot; When you press gv you vimgrep after the selected text</font><br>
-<font color="#b0b0b0">219 </font><font color="#c0d8f8">vnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">silent</font><font color="#e0c060">&gt;</font>&nbsp;gv&nbsp;:call VisualSearch('gv')<font color="#e0c060">&lt;</font><font color="#e0c060">CR</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">220 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>g&nbsp;:vimgrep // **/*.<font color="#e0c060">&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">221 </font><br>
-<font color="#b0b0b0">222 </font><br>
-<font color="#b0b0b0">223 </font><font color="#c0d8f8">function</font>! CmdLine<font color="#c0d8f8">(</font>str<font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">224 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">exe</font>&nbsp;<font color="#80c0e0">&quot;menu Foo.Bar :&quot;</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;a:str<br>
-<font color="#b0b0b0">225 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">emenu</font>&nbsp;Foo<font color="#c0d8f8">.</font>Bar<br>
-<font color="#b0b0b0">226 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">unmenu</font>&nbsp;Foo<br>
-<font color="#b0b0b0">227 </font><font color="#c0d8f8">endfunction</font>&nbsp;<br>
-<font color="#b0b0b0">228 </font><br>
-<font color="#b0b0b0">229 </font><font color="#d0d090">&quot; From an idea by Michael Naumann</font><br>
-<font color="#b0b0b0">230 </font><font color="#c0d8f8">function</font>! VisualSearch<font color="#c0d8f8">(</font>direction<font color="#c0d8f8">)</font>&nbsp;range<br>
-<font color="#b0b0b0">231 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;l:saved_reg&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#b0b0b0">@&quot;</font><br>
-<font color="#b0b0b0">232 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">execute</font>&nbsp;<font color="#80c0e0">&quot;normal! vgvy&quot;</font><br>
-<font color="#b0b0b0">233 </font><br>
-<font color="#b0b0b0">234 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;l:pattern&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">escape</font><font color="#c0d8f8">(</font><font color="#b0b0b0">@&quot;</font>, <font color="#80c0e0">'\\/.*$^~[]'</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">235 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;l:pattern&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>l:pattern, <font color="#80c0e0">&quot;\n$&quot;</font>, <font color="#80c0e0">&quot;&quot;</font>, <font color="#80c0e0">&quot;&quot;</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">236 </font><br>
-<font color="#b0b0b0">237 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">if</font>&nbsp;<font color="#f0c0f0">a:direction</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">'b'</font><br>
-<font color="#b0b0b0">238 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">execute</font>&nbsp;<font color="#80c0e0">&quot;normal ?&quot;</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;l:pattern&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">&quot;^M&quot;</font><br>
-<font color="#b0b0b0">239 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">elseif</font>&nbsp;<font color="#f0c0f0">a:direction</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">'gv'</font><br>
-<font color="#b0b0b0">240 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">call</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">CmdLine</font></span><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;vimgrep &quot;</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">'/'</font><font color="#c0d8f8">.</font>&nbsp;l:pattern <font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">'/'</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">' **/*.'</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">241 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">elseif</font>&nbsp;<font color="#f0c0f0">a:direction</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">'f'</font><br>
-<font color="#b0b0b0">242 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">execute</font>&nbsp;<font color="#80c0e0">&quot;normal /&quot;</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;l:pattern&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">&quot;^M&quot;</font><br>
-<font color="#b0b0b0">243 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">endif</font><br>
-<font color="#b0b0b0">244 </font><br>
-<font color="#b0b0b0">245 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;@/ <font color="#c0d8f8">=</font>&nbsp;<font color="#c0d8f8">l</font>:pattern<br>
-<font color="#b0b0b0">246 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;<font color="#b0b0b0">@&quot;</font>&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#c0d8f8">l</font>:saved_reg<br>
-<font color="#b0b0b0">247 </font><font color="#c0d8f8">endfunction</font><br>
-<font color="#b0b0b0">248 </font><br>
-<font color="#b0b0b0">249 </font><br>
-<font color="#b0b0b0">250 </font><br>
-<font color="#b0b0b0">251 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">252 </font><font color="#d0d090">&quot; =&gt; Command mode related</font><br>
-<font color="#b0b0b0">253 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">254 </font><font color="#d0d090">&quot; Smart mappings on the command line</font><br>
-<font color="#b0b0b0">255 </font><font color="#c0d8f8">cno</font>&nbsp;$h&nbsp;e ~/<br>
-<font color="#b0b0b0">256 </font><font color="#c0d8f8">cno</font>&nbsp;$d&nbsp;e ~/Desktop/<br>
-<font color="#b0b0b0">257 </font><font color="#c0d8f8">cno</font>&nbsp;$j&nbsp;e ./<br>
-<font color="#b0b0b0">258 </font><font color="#c0d8f8">cno</font>&nbsp;$c&nbsp;e <font color="#e0c060">&lt;</font><font color="#e0c060">C-</font><font color="#e0c060">\&gt;</font>eCurrentFileDir(&quot;e&quot;)<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">259 </font><br>
-<font color="#b0b0b0">260 </font><font color="#d0d090">&quot; $q is super useful when browsing on the command line</font><br>
-<font color="#b0b0b0">261 </font><font color="#c0d8f8">cno</font>&nbsp;$q&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-</font><font color="#e0c060">\&gt;</font>eDeleteTillSlash()<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">262 </font><br>
-<font color="#b0b0b0">263 </font><font color="#d0d090">&quot; Bash like keys for the command line</font><br>
-<font color="#b0b0b0">264 </font><font color="#c0d8f8">cnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-A</font><font color="#e0c060">&gt;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">Home</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">265 </font><font color="#c0d8f8">cnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-E</font><font color="#e0c060">&gt;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">End</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">266 </font><font color="#c0d8f8">cnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-K</font><font color="#e0c060">&gt;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-U</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">267 </font><br>
-<font color="#b0b0b0">268 </font><font color="#c0d8f8">cnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-P</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">Up</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">269 </font><font color="#c0d8f8">cnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-N</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">Down</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">270 </font><br>
-<font color="#b0b0b0">271 </font><font color="#d0d090">&quot; Useful on some European keyboards</font><br>
-<font color="#b0b0b0">272 </font><font color="#c0d8f8">map</font>&nbsp;½&nbsp;$<br>
-<font color="#b0b0b0">273 </font><font color="#c0d8f8">imap</font>&nbsp;½&nbsp;$<br>
-<font color="#b0b0b0">274 </font><font color="#c0d8f8">vmap</font>&nbsp;½&nbsp;$<br>
-<font color="#b0b0b0">275 </font><font color="#c0d8f8">cmap</font>&nbsp;½&nbsp;$<br>
-<font color="#b0b0b0">276 </font><br>
-<font color="#b0b0b0">277 </font><br>
-<font color="#b0b0b0">278 </font><font color="#c0d8f8">func</font>! Cwd<font color="#c0d8f8">()</font><br>
-<font color="#b0b0b0">279 </font>&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;cwd&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">getcwd</font><font color="#c0d8f8">()</font><br>
-<font color="#b0b0b0">280 </font>&nbsp;&nbsp;<font color="#c0d8f8">return</font>&nbsp;<font color="#b0b0b0">&quot;e</font>&nbsp;<font color="#d0d090">&quot; . cwd </font><br>
-<font color="#b0b0b0">281 </font><font color="#c0d8f8">endfunc</font><br>
-<font color="#b0b0b0">282 </font><br>
-<font color="#b0b0b0">283 </font><font color="#c0d8f8">func</font>! DeleteTillSlash<font color="#c0d8f8">()</font><br>
-<font color="#b0b0b0">284 </font>&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;g:cmd&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">getcmdline</font><font color="#c0d8f8">()</font><br>
-<font color="#b0b0b0">285 </font>&nbsp;&nbsp;<font color="#c0d8f8">if</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;linux&quot;</font>&nbsp;<font color="#c0d8f8">||</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;mac&quot;</font><br>
-<font color="#b0b0b0">286 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;g:cmd_edited&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>g:cmd, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">(.*\[/\]</font><font color="#80c0e0">\\</font><font color="#80c0e0">).*&quot;</font>, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">1&quot;</font>, <font color="#80c0e0">&quot;&quot;</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">287 </font>&nbsp;&nbsp;<font color="#c0d8f8">else</font><br>
-<font color="#b0b0b0">288 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;g:cmd_edited&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>g:cmd, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">(.*\[</font><font color="#80c0e0">\\\\</font><font color="#80c0e0">]</font><font color="#80c0e0">\\</font><font color="#80c0e0">).*&quot;</font>, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">1&quot;</font>, <font color="#80c0e0">&quot;&quot;</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">289 </font>&nbsp;&nbsp;<font color="#c0d8f8">endif</font><br>
-<font color="#b0b0b0">290 </font>&nbsp;&nbsp;<font color="#c0d8f8">if</font>&nbsp;g:cmd&nbsp;<font color="#c0d8f8">==</font>&nbsp;g:cmd_edited<br>
-<font color="#b0b0b0">291 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">if</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;linux&quot;</font>&nbsp;<font color="#c0d8f8">||</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;mac&quot;</font><br>
-<font color="#b0b0b0">292 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;g:cmd_edited&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>g:cmd, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">(.*\[/\]</font><font color="#80c0e0">\\</font><font color="#80c0e0">).*/&quot;</font>, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">1&quot;</font>, <font color="#80c0e0">&quot;&quot;</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">293 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">else</font><br>
-<font color="#b0b0b0">294 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;g:cmd_edited&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>g:cmd, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">(.*\[</font><font color="#80c0e0">\\\\</font><font color="#80c0e0">\]</font><font color="#80c0e0">\\</font><font color="#80c0e0">).*\[</font><font color="#80c0e0">\\\\</font><font color="#80c0e0">\]&quot;</font>, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">1&quot;</font>, <font color="#80c0e0">&quot;&quot;</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">295 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">endif</font><br>
-<font color="#b0b0b0">296 </font>&nbsp;&nbsp;<font color="#c0d8f8">endif</font>&nbsp;&nbsp; <br>
-<font color="#b0b0b0">297 </font>&nbsp;&nbsp;<font color="#c0d8f8">return</font>&nbsp;g:cmd_edited<br>
-<font color="#b0b0b0">298 </font><font color="#c0d8f8">endfunc</font><br>
-<font color="#b0b0b0">299 </font><br>
-<font color="#b0b0b0">300 </font><font color="#c0d8f8">func</font>! CurrentFileDir<font color="#c0d8f8">(</font>cmd<font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">301 </font>&nbsp;&nbsp;<font color="#c0d8f8">return</font>&nbsp;<font color="#f0c0f0">a:cmd</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">&quot; &quot;</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#f0c0f0">expand</font><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;%:p:h&quot;</font><font color="#c0d8f8">)</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">&quot;/&quot;</font><br>
-<font color="#b0b0b0">302 </font><font color="#c0d8f8">endfunc</font><br>
-<font color="#b0b0b0">303 </font><br>
-<font color="#b0b0b0">304 </font><br>
-<font color="#b0b0b0">305 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">306 </font><font color="#d0d090">&quot; =&gt; Moving around, tabs and buffers</font><br>
-<font color="#b0b0b0">307 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">308 </font><font color="#d0d090">&quot; Map space to / (search) and c-space to ? (backgwards search)</font><br>
-<font color="#b0b0b0">309 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">space</font><font color="#e0c060">&gt;</font>&nbsp;/<br>
-<font color="#b0b0b0">310 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">c-space</font><font color="#e0c060">&gt;</font>&nbsp;?<br>
-<font color="#b0b0b0">311 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">silent</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font><font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>&nbsp;:noh<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">312 </font><br>
-<font color="#b0b0b0">313 </font><font color="#d0d090">&quot; Smart way to move btw. windows</font><br>
-<font color="#b0b0b0">314 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-j</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-W</font><font color="#e0c060">&gt;</font>j<br>
-<font color="#b0b0b0">315 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-k</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-W</font><font color="#e0c060">&gt;</font>k<br>
-<font color="#b0b0b0">316 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-h</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-W</font><font color="#e0c060">&gt;</font>h<br>
-<font color="#b0b0b0">317 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-l</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-W</font><font color="#e0c060">&gt;</font>l<br>
-<font color="#b0b0b0">318 </font><br>
-<font color="#b0b0b0">319 </font><font color="#d0d090">&quot; Close the current buffer</font><br>
-<font color="#b0b0b0">320 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>bd&nbsp;:Bclose<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">321 </font><br>
-<font color="#b0b0b0">322 </font><font color="#d0d090">&quot; Close all the buffers</font><br>
-<font color="#b0b0b0">323 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>ba&nbsp;:1,300 bd!<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">324 </font><br>
-<font color="#b0b0b0">325 </font><font color="#d0d090">&quot; Use the arrows to something usefull</font><br>
-<font color="#b0b0b0">326 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">right</font><font color="#e0c060">&gt;</font>&nbsp;:bn<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">327 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;</font>&nbsp;:bp<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">328 </font><br>
-<font color="#b0b0b0">329 </font><font color="#d0d090">&quot; Tab configuration</font><br>
-<font color="#b0b0b0">330 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>tn&nbsp;:tabnew %<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">331 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>te&nbsp;:tabedit <br>
-<font color="#b0b0b0">332 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>tc&nbsp;:tabclose<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">333 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>tm&nbsp;:tabmove <br>
-<font color="#b0b0b0">334 </font><br>
-<font color="#b0b0b0">335 </font><font color="#d0d090">&quot; When pressing &lt;leader&gt;cd switch to the directory of the open buffer</font><br>
-<font color="#b0b0b0">336 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>cd&nbsp;:cd %:p:h<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">337 </font><br>
-<font color="#b0b0b0">338 </font><br>
-<font color="#b0b0b0">339 </font><font color="#c0d8f8">command</font>! Bclose&nbsp;<font color="#c0d8f8">call</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">SID</font><font color="#e0c060">&gt;</font><span style="background-color: #202020"><font color="#d0d0d0">BufcloseCloseIt</font></span>()<br>
-<font color="#b0b0b0">340 </font><font color="#c0d8f8">function</font>! <font color="#e0c060">&lt;SID&gt;</font>BufcloseCloseIt<font color="#c0d8f8">()</font><br>
-<font color="#b0b0b0">341 </font>&nbsp;&nbsp; <font color="#c0d8f8">let</font>&nbsp;l:currentBufNum&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">bufnr</font><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;%&quot;</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">342 </font>&nbsp;&nbsp; <font color="#c0d8f8">let</font>&nbsp;l:alternateBufNum&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">bufnr</font><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;#&quot;</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">343 </font><br>
-<font color="#b0b0b0">344 </font>&nbsp;&nbsp; <font color="#c0d8f8">if</font>&nbsp;<font color="#f0c0f0">buflisted</font><font color="#c0d8f8">(</font>l:alternateBufNum<font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">345 </font>&nbsp;&nbsp;&nbsp;&nbsp; <font color="#c0d8f8">buffer</font>&nbsp;#<br>
-<font color="#b0b0b0">346 </font>&nbsp;&nbsp; <font color="#c0d8f8">else</font><br>
-<font color="#b0b0b0">347 </font>&nbsp;&nbsp;&nbsp;&nbsp; <font color="#c0d8f8">bnext</font><br>
-<font color="#b0b0b0">348 </font>&nbsp;&nbsp; <font color="#c0d8f8">endif</font><br>
-<font color="#b0b0b0">349 </font><br>
-<font color="#b0b0b0">350 </font>&nbsp;&nbsp; <font color="#c0d8f8">if</font>&nbsp;<font color="#f0c0f0">bufnr</font><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;%&quot;</font><font color="#c0d8f8">)</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#c0d8f8">l</font>:currentBufNum<br>
-<font color="#b0b0b0">351 </font>&nbsp;&nbsp;&nbsp;&nbsp; <font color="#c0d8f8">new</font><br>
-<font color="#b0b0b0">352 </font>&nbsp;&nbsp; <font color="#c0d8f8">endif</font><br>
-<font color="#b0b0b0">353 </font><br>
-<font color="#b0b0b0">354 </font>&nbsp;&nbsp; <font color="#c0d8f8">if</font>&nbsp;<font color="#f0c0f0">buflisted</font><font color="#c0d8f8">(</font>l:currentBufNum<font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">355 </font>&nbsp;&nbsp;&nbsp;&nbsp; <span style="background-color: #202020"><font color="#d0d0d0">execute</font></span><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;bdelete! &quot;</font><font color="#c0d8f8">.</font>l:currentBufNum<font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">356 </font>&nbsp;&nbsp; <font color="#c0d8f8">endif</font><br>
-<font color="#b0b0b0">357 </font><font color="#c0d8f8">endfunction</font><br>
-<font color="#b0b0b0">358 </font><br>
-<font color="#b0b0b0">359 </font><font color="#d0d090">&quot; Specify the behavior when switching between buffers </font><br>
-<font color="#b0b0b0">360 </font><font color="#c0d8f8">try</font><br>
-<font color="#b0b0b0">361 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">switchbuf</font>=usetab<br>
-<font color="#b0b0b0">362 </font>&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">stal</font>=2<br>
-<font color="#b0b0b0">363 </font><font color="#c0d8f8">catch</font><br>
-<font color="#b0b0b0">364 </font><font color="#c0d8f8">endtry</font><br>
-<font color="#b0b0b0">365 </font><br>
-<font color="#b0b0b0">366 </font><br>
-<font color="#b0b0b0">367 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">368 </font><font color="#d0d090">&quot; =&gt; Statusline</font><br>
-<font color="#b0b0b0">369 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">370 </font><font color="#d0d090">&quot; Always hide the statusline</font><br>
-<font color="#b0b0b0">371 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">laststatus</font>=2<br>
-<font color="#b0b0b0">372 </font><br>
-<font color="#b0b0b0">373 </font><font color="#d0d090">&quot; Format the statusline</font><br>
-<font color="#b0b0b0">374 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">statusline</font>=\ %F%m%r%h\ %w\ \ CWD<font color="#c0d8f8">:</font>\ %r%{CurDir()}%h\ \ \ Line<font color="#c0d8f8">:</font>\ %l/%L<font color="#c0d8f8">:</font>%c<br>
-<font color="#b0b0b0">375 </font><br>
-<font color="#b0b0b0">376 </font><br>
-<font color="#b0b0b0">377 </font><font color="#c0d8f8">function</font>! CurDir<font color="#c0d8f8">()</font><br>
-<font color="#b0b0b0">378 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;curdir&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>getcwd<font color="#c0d8f8">()</font>, <font color="#80c0e0">'/Users/amir/'</font>, <font color="#80c0e0">&quot;~/&quot;</font>, <font color="#80c0e0">&quot;g&quot;</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">379 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">return</font>&nbsp;curdir<br>
-<font color="#b0b0b0">380 </font><font color="#c0d8f8">endfunction</font><br>
-<font color="#b0b0b0">381 </font><br>
-<font color="#b0b0b0">382 </font><br>
-<font color="#b0b0b0">383 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">384 </font><font color="#d0d090">&quot; =&gt; Parenthesis/bracket expanding</font><br>
-<font color="#b0b0b0">385 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">386 </font><font color="#c0d8f8">vnoremap</font>&nbsp;$1&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&gt;a)<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&lt;i(<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">387 </font><font color="#c0d8f8">vnoremap</font>&nbsp;$2&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&gt;a]<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&lt;i[<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">388 </font><font color="#c0d8f8">vnoremap</font>&nbsp;$3&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&gt;a}<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&lt;i{<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">389 </font><font color="#c0d8f8">vnoremap</font>&nbsp;$$&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&gt;a&quot;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&lt;i&quot;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">390 </font><font color="#c0d8f8">vnoremap</font>&nbsp;$q&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&gt;a'<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&lt;i'<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">391 </font><font color="#c0d8f8">vnoremap</font>&nbsp;$e&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&gt;a&quot;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&lt;i&quot;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">392 </font><br>
-<font color="#b0b0b0">393 </font><font color="#d0d090">&quot; Map auto complete of (, &quot;, ', [</font><br>
-<font color="#b0b0b0">394 </font><font color="#c0d8f8">inoremap</font>&nbsp;$1&nbsp;()<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>i<br>
-<font color="#b0b0b0">395 </font><font color="#c0d8f8">inoremap</font>&nbsp;$2&nbsp;[]<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>i<br>
-<font color="#b0b0b0">396 </font><font color="#c0d8f8">inoremap</font>&nbsp;$3&nbsp;{}<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>i<br>
-<font color="#b0b0b0">397 </font><font color="#c0d8f8">inoremap</font>&nbsp;$4&nbsp;{<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>o}<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>O<br>
-<font color="#b0b0b0">398 </font><font color="#c0d8f8">inoremap</font>&nbsp;$q&nbsp;''<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>i<br>
-<font color="#b0b0b0">399 </font><font color="#c0d8f8">inoremap</font>&nbsp;$e&nbsp;&quot;&quot;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>i<br>
-<font color="#b0b0b0">400 </font><br>
-<font color="#b0b0b0">401 </font><br>
-<font color="#b0b0b0">402 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">403 </font><font color="#d0d090">&quot; =&gt; General Abbrevs</font><br>
-<font color="#b0b0b0">404 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">405 </font><font color="#c0d8f8">iab</font>&nbsp;xdate&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">c-r</font><font color="#e0c060">&gt;</font>=strftime(&quot;%d/%m/%y %H:%M:%S&quot;)<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">406 </font><br>
-<font color="#b0b0b0">407 </font><br>
-<font color="#b0b0b0">408 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">409 </font><font color="#d0d090">&quot; =&gt; Editing mappings</font><br>
-<font color="#b0b0b0">410 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">411 </font><font color="#d0d090">&quot;Remap VIM 0</font><br>
-<font color="#b0b0b0">412 </font><font color="#c0d8f8">map</font>&nbsp;0&nbsp;^<br>
-<font color="#b0b0b0">413 </font><br>
-<font color="#b0b0b0">414 </font><font color="#d0d090">&quot;Move a line of text using ALT+[jk] or Comamnd+[jk] on mac</font><br>
-<font color="#b0b0b0">415 </font><font color="#c0d8f8">nmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-j</font><font color="#e0c060">&gt;</font>&nbsp;mz:m+<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>`z<br>
-<font color="#b0b0b0">416 </font><font color="#c0d8f8">nmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-k</font><font color="#e0c060">&gt;</font>&nbsp;mz:m-2<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>`z<br>
-<font color="#b0b0b0">417 </font><font color="#c0d8f8">vmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-j</font><font color="#e0c060">&gt;</font>&nbsp;:m'&gt;+<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>`&lt;my`&gt;mzgv`yo`z<br>
-<font color="#b0b0b0">418 </font><font color="#c0d8f8">vmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-k</font><font color="#e0c060">&gt;</font>&nbsp;:m'&lt;-2<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>`&gt;my`&lt;mzgv`yo`z<br>
-<font color="#b0b0b0">419 </font><br>
-<font color="#b0b0b0">420 </font><font color="#c0d8f8">if</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;mac&quot;</font><br>
-<font color="#b0b0b0">421 </font>&nbsp;&nbsp;<font color="#c0d8f8">nmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">D-j</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-j</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">422 </font>&nbsp;&nbsp;<font color="#c0d8f8">nmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">D-k</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-k</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">423 </font>&nbsp;&nbsp;<font color="#c0d8f8">vmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">D-j</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-j</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">424 </font>&nbsp;&nbsp;<font color="#c0d8f8">vmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">D-k</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-k</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">425 </font><font color="#c0d8f8">endif</font><br>
-<font color="#b0b0b0">426 </font><br>
-<font color="#b0b0b0">427 </font><font color="#d0d090">&quot;Delete trailing white space, useful for Python ;)</font><br>
-<font color="#b0b0b0">428 </font><font color="#c0d8f8">func</font>! DeleteTrailingWS<font color="#c0d8f8">()</font><br>
-<font color="#b0b0b0">429 </font>&nbsp;&nbsp;<font color="#c0d8f8">exe</font>&nbsp;<font color="#80c0e0">&quot;normal mz&quot;</font><br>
-<font color="#b0b0b0">430 </font>&nbsp;&nbsp;<font color="#e0c060">%</font><font color="#c0d8f8">s</font><font color="#e0c060">/</font>\s\+$<font color="#e0c060">//</font><font color="#e0c060">ge</font><br>
-<font color="#b0b0b0">431 </font>&nbsp;&nbsp;<font color="#c0d8f8">exe</font>&nbsp;<font color="#80c0e0">&quot;normal `z&quot;</font><br>
-<font color="#b0b0b0">432 </font><font color="#c0d8f8">endfunc</font><br>
-<font color="#b0b0b0">433 </font><font color="#c0d8f8">autocmd</font>&nbsp;<font color="#b0d0f0">BufWrite</font>&nbsp;*.py&nbsp;:<font color="#c0d8f8">call</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">DeleteTrailingWS</font></span><font color="#c0d8f8">()</font><br>
-<font color="#b0b0b0">434 </font><br>
-<font color="#b0b0b0">435 </font><br>
-<font color="#b0b0b0">436 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">437 </font><font color="#d0d090">&quot; =&gt; Cope</font><br>
-<font color="#b0b0b0">438 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">439 </font><font color="#d0d090">&quot; Do :help cope if you are unsure what cope is. It's super useful!</font><br>
-<font color="#b0b0b0">440 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>cc&nbsp;:botright cope<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">441 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>n&nbsp;:cn<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">442 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>p&nbsp;:cp<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">443 </font><br>
-<font color="#b0b0b0">444 </font><br>
-<font color="#b0b0b0">445 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">446 </font><font color="#d0d090">&quot; =&gt; bufExplorer plugin</font><br>
-<font color="#b0b0b0">447 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">448 </font><font color="#c0d8f8">let</font>&nbsp;g:bufExplorerDefaultHelp<font color="#c0d8f8">=</font><font color="#e0c060">0</font><br>
-<font color="#b0b0b0">449 </font><font color="#c0d8f8">let</font>&nbsp;g:bufExplorerShowRelativePath<font color="#c0d8f8">=</font><font color="#e0c060">1</font><br>
-<font color="#b0b0b0">450 </font><br>
-<font color="#b0b0b0">451 </font><br>
-<font color="#b0b0b0">452 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">453 </font><font color="#d0d090">&quot; =&gt; Minibuffer plugin</font><br>
-<font color="#b0b0b0">454 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">455 </font><font color="#c0d8f8">let</font>&nbsp;g:miniBufExplModSelTarget&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">1</font><br>
-<font color="#b0b0b0">456 </font><font color="#c0d8f8">let</font>&nbsp;g:miniBufExplorerMoreThanOne&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">2</font><br>
-<font color="#b0b0b0">457 </font><font color="#c0d8f8">let</font>&nbsp;g:miniBufExplModSelTarget&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">0</font><br>
-<font color="#b0b0b0">458 </font><font color="#c0d8f8">let</font>&nbsp;g:miniBufExplUseSingleClick&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">1</font><br>
-<font color="#b0b0b0">459 </font><font color="#c0d8f8">let</font>&nbsp;g:miniBufExplMapWindowNavVim&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">1</font><br>
-<font color="#b0b0b0">460 </font><font color="#c0d8f8">let</font>&nbsp;g:miniBufExplVSplit&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">25</font><br>
-<font color="#b0b0b0">461 </font><font color="#c0d8f8">let</font>&nbsp;g:miniBufExplSplitBelow<font color="#c0d8f8">=</font><font color="#e0c060">1</font><br>
-<font color="#b0b0b0">462 </font><br>
-<font color="#b0b0b0">463 </font><font color="#c0d8f8">let</font>&nbsp;g:bufExplorerSortBy&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#80c0e0">&quot;name&quot;</font><br>
-<font color="#b0b0b0">464 </font><br>
-<font color="#b0b0b0">465 </font><font color="#c0d8f8">autocmd</font>&nbsp;<font color="#b0d0f0">BufRead</font>,<font color="#b0d0f0">BufNew</font>&nbsp;:call&nbsp;UMiniBufExplorer<br>
-<font color="#b0b0b0">466 </font><br>
-<font color="#b0b0b0">467 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>u&nbsp;:TMiniBufExplorer<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>:TMiniBufExplorer<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">468 </font><br>
-<font color="#b0b0b0">469 </font><br>
-<font color="#b0b0b0">470 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">471 </font><font color="#d0d090">&quot; =&gt; Omni complete functions</font><br>
-<font color="#b0b0b0">472 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">473 </font><font color="#c0d8f8">autocmd</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;css&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">omnifunc</font>=csscomplete#CompleteCSS<br>
-<font color="#b0b0b0">474 </font><br>
-<font color="#b0b0b0">475 </font><br>
-<font color="#b0b0b0">476 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">477 </font><font color="#d0d090">&quot; =&gt; Spell checking</font><br>
-<font color="#b0b0b0">478 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">479 </font><font color="#d0d090">&quot;Pressing ,ss will toggle and untoggle spell checking</font><br>
-<font color="#b0b0b0">480 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>ss&nbsp;:setlocal spell!<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">481 </font><br>
-<font color="#b0b0b0">482 </font><font color="#d0d090">&quot;Shortcuts using &lt;leader&gt;</font><br>
-<font color="#b0b0b0">483 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>sn&nbsp;]s<br>
-<font color="#b0b0b0">484 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>sp&nbsp;[s<br>
-<font color="#b0b0b0">485 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>sa&nbsp;zg<br>
-<font color="#b0b0b0">486 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>s?&nbsp;z=<br>
-<font color="#b0b0b0">487 </font><br>
-<font color="#b0b0b0">488 </font><br>
-<font color="#b0b0b0">489 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">490 </font><font color="#d0d090">&quot; =&gt; Python section</font><br>
-<font color="#b0b0b0">491 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">492 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">nocindent</font><br>
-<font color="#b0b0b0">493 </font><font color="#c0d8f8">let</font>&nbsp;python_highlight_all&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">1</font><br>
-<font color="#b0b0b0">494 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">syn</font>&nbsp;<font color="#b0d0f0">keyword</font>&nbsp;pythonDecorator&nbsp;True None False self<br>
-<font color="#b0b0b0">495 </font><br>
-<font color="#b0b0b0">496 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">BufNewFile</font>,<font color="#b0d0f0">BufRead</font>&nbsp;*.jinja&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">syntax</font>=htmljinja<br>
-<font color="#b0b0b0">497 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">BufNewFile</font>,<font color="#b0d0f0">BufRead</font>&nbsp;*.mako&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">ft</font>=mako<br>
-<font color="#b0b0b0">498 </font><br>
-<font color="#b0b0b0">499 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">inoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;$r&nbsp;return <br>
-<font color="#b0b0b0">500 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">inoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;$i&nbsp;import <br>
-<font color="#b0b0b0">501 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">inoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;$p&nbsp;print <br>
-<font color="#b0b0b0">502 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">inoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;$f&nbsp;#--- PH ----------------------------------------------<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>FP2xi<br>
-<font color="#b0b0b0">503 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>1&nbsp;/class <br>
-<font color="#b0b0b0">504 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>2&nbsp;/def <br>
-<font color="#b0b0b0">505 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>C&nbsp;?class <br>
-<font color="#b0b0b0">506 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>D&nbsp;?def <br>
-<font color="#b0b0b0">507 </font><br>
-<font color="#b0b0b0">508 </font><br>
-<font color="#b0b0b0">509 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">510 </font><font color="#d0d090">&quot; =&gt; JavaScript section</font><br>
-<font color="#b0b0b0">511 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">512 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">call</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">JavaScriptFold</font></span><font color="#c0d8f8">()</font><br>
-<font color="#b0b0b0">513 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">setl</font>&nbsp;<font color="#60f080">fen</font><br>
-<font color="#b0b0b0">514 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">setl</font>&nbsp;<font color="#60f080">nocindent</font><br>
-<font color="#b0b0b0">515 </font><br>
-<font color="#b0b0b0">516 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">imap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">c-t</font><font color="#e0c060">&gt;</font>&nbsp;AJS.log();<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>hi<br>
-<font color="#b0b0b0">517 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">imap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">c-a</font><font color="#e0c060">&gt;</font>&nbsp;alert();<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>hi<br>
-<font color="#b0b0b0">518 </font><br>
-<font color="#b0b0b0">519 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">inoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;$r&nbsp;return <br>
-<font color="#b0b0b0">520 </font><font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">inoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;$f&nbsp;//--- PH ----------------------------------------------<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>FP2xi<br>
-<font color="#b0b0b0">521 </font><br>
-<font color="#b0b0b0">522 </font><font color="#c0d8f8">function</font>! JavaScriptFold<font color="#c0d8f8">()</font>&nbsp;<br>
-<font color="#b0b0b0">523 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">setl</font>&nbsp;<font color="#60f080">foldmethod</font>=syntax<br>
-<font color="#b0b0b0">524 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">setl</font>&nbsp;<font color="#60f080">foldlevelstart</font>=1<br>
-<font color="#b0b0b0">525 </font>&nbsp;&nbsp;&nbsp;&nbsp;syn&nbsp;region&nbsp;foldBraces&nbsp;<font color="#c0d8f8">start</font><font color="#c0d8f8">=</font>/<font color="#e0c060">{</font>/ end<font color="#c0d8f8">=</font>/<font color="#e0c060">}</font>/ transparent&nbsp;<font color="#c0d8f8">fold</font>&nbsp;keepend&nbsp;extend<br>
-<font color="#b0b0b0">526 </font><br>
-<font color="#b0b0b0">527 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">function</font>! FoldText<font color="#c0d8f8">()</font><br>
-<font color="#b0b0b0">528 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">return</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>getline<font color="#c0d8f8">(</font>v:foldstart<font color="#c0d8f8">)</font>, <font color="#80c0e0">'{.*'</font>, <font color="#80c0e0">'{...}'</font>, <font color="#80c0e0">''</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">529 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">endfunction</font><br>
-<font color="#b0b0b0">530 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">setl</font>&nbsp;<font color="#60f080">foldtext</font>=FoldText()<br>
-<font color="#b0b0b0">531 </font><font color="#c0d8f8">endfunction</font><br>
-<font color="#b0b0b0">532 </font><br>
-<font color="#b0b0b0">533 </font><br>
-<font color="#b0b0b0">534 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">535 </font><font color="#d0d090">&quot; =&gt; Fuzzy finder</font><br>
-<font color="#b0b0b0">536 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">537 </font><font color="#c0d8f8">try</font><br>
-<font color="#b0b0b0">538 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">call</font>&nbsp;fuf#<span style="background-color: #202020"><font color="#d0d0d0">defineLaunchCommand</font></span><font color="#c0d8f8">(</font><font color="#80c0e0">'FufCWD'</font>, <font color="#80c0e0">'file'</font>, <font color="#80c0e0">'fnamemodify(getcwd(), ''%:p:h'')'</font><font color="#c0d8f8">)</font><br>
-<font color="#b0b0b0">539 </font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>t&nbsp;:FufCWD **/<font color="#e0c060">&lt;</font><font color="#e0c060">CR</font><font color="#e0c060">&gt;</font><br>
-<font color="#b0b0b0">540 </font><font color="#c0d8f8">catch</font><br>
-<font color="#b0b0b0">541 </font><font color="#c0d8f8">endtry</font><br>
-<font color="#b0b0b0">542 </font><br>
-<font color="#b0b0b0">543 </font><br>
-<font color="#b0b0b0">544 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">545 </font><font color="#d0d090">&quot; =&gt; Vim grep</font><br>
-<font color="#b0b0b0">546 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">547 </font><font color="#c0d8f8">let</font>&nbsp;Grep_Skip_Dirs&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#80c0e0">'RCS CVS SCCS .svn generated'</font><br>
-<font color="#b0b0b0">548 </font><font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">grepprg</font>=/bin/grep\ -nH<br>
-<font color="#b0b0b0">549 </font><br>
-<font color="#b0b0b0">550 </font><br>
-<font color="#b0b0b0">551 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">552 </font><font color="#d0d090">&quot; =&gt; MISC</font><br>
-<font color="#b0b0b0">553 </font><font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
-<font color="#b0b0b0">554 </font><font color="#d0d090">&quot; Remove the Windows ^M - when the encodings gets messed up</font><br>
-<font color="#b0b0b0">555 </font><font color="#c0d8f8">noremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">Leader</font><font color="#e0c060">&gt;</font>m&nbsp;mmHmt:%s/<font color="#e0c060">&lt;</font><font color="#e0c060">C-V</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>//ge<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>'tzt'm<br>
-<font color="#b0b0b0">556 </font><br>
-<font color="#b0b0b0">557 </font><font color="#d0d090">&quot;Quickly open a buffer for scripbble</font><br>
-<font color="#b0b0b0">558 </font><font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>q&nbsp;:e ~/buffer<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Maintainer:</font><font color="#d0d090">&nbsp;amix the lucky stiff</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://amix.dk">http://amix.dk</a> - amix@amix.dk</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Version:</font><font color="#d0d090">&nbsp;3.3 - 21/01/10 01:05:46</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Blog_post:</font><font color="#d0d090">&nbsp;</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc">http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc</a></font><br>
+<font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Syntax_highlighted:</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://amix.dk/vim/vimrc.html">http://amix.dk/vim/vimrc.html</a></font><br>
+<font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Raw_version:</font><font color="#d0d090">&nbsp;</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://amix.dk/vim/vimrc.txt">http://amix.dk/vim/vimrc.txt</a></font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">How_to_Install:</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;$ mkdir ~/.vim_runtime</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;$ svn co svn://orangoo.com/vim ~/.vim_runtime</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;$ cat ~/.vim_runtime/install.sh</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;$ sh ~/.vim_runtime/install.sh &lt;system&gt;</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sytem&gt; can be `mac`, `linux` or `windows`</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">How_to_Upgrade:</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;$ svn update ~/.vim_runtime</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Sections:</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; General</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; VIM user interface</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Colors and Fonts</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Files and backups</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Text, tab and indent related</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Visual mode related</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Command mode related</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Moving around, tabs and buffers</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Statusline</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Parenthesis/bracket expanding</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; General Abbrevs</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Editing mappings</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Cope</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Minibuffer plugin</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Omni complete functions</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Python section</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;-&gt; JavaScript section</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;</font>&nbsp;<font color="#60f080">Plugins_Included:</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; minibufexpl.vim - <a href="http://www.vim.org/scripts/script.php?script_id=159">http://www.vim.org/scripts/script.php?script_id=159</a></font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Makes it easy to get an overview of buffers:</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info -&gt; :e ~/.vim_runtime/plugin/minibufexpl.vim</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; bufexplorer - <a href="http://www.vim.org/scripts/script.php?script_id=42">http://www.vim.org/scripts/script.php?script_id=42</a></font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Makes it easy to switch between buffers:</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info -&gt; :help bufExplorer</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; yankring.vim - <a href="http://www.vim.org/scripts/script.php?script_id=1234">http://www.vim.org/scripts/script.php?script_id=1234</a></font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Emacs's killring, useful when using the clipboard:</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info -&gt; :help yankring</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; surround.vim - <a href="http://www.vim.org/scripts/script.php?script_id=1697">http://www.vim.org/scripts/script.php?script_id=1697</a></font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Makes it easy to work with surrounding text:</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info -&gt; :help surround</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; snipMate.vim - <a href="http://www.vim.org/scripts/script.php?script_id=2540">http://www.vim.org/scripts/script.php?script_id=2540</a></font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Snippets for many languages (similar to TextMate's):</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info -&gt; :help snipMate</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; fuzzyfinder - <a href="http://www.vim.org/scripts/script.php?script_id=1984">http://www.vim.org/scripts/script.php?script_id=1984</a></font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Find files fast (similar to TextMate's feature):</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; info -&gt; :help fuzzyfinder@en</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;</font>&nbsp;&nbsp;<font color="#60f080">Revisions:</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; 3.3: Added syntax highlighting for Mako mako.vim </font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; 3.2: Turned on python_highlight_all for better syntax</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;highlighting for Python</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;&nbsp;&nbsp; &gt; 3.1: Added revisions ;) and bufexplorer.vim</font><br>
+<font color="#d0d090">&quot;</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; General</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; Sets how many lines of history VIM has to remember</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">history</font>=300<br>
+<br>
+<font color="#d0d090">&quot; Enable filetype plugin</font><br>
+<font color="#c0d8f8">filetype</font>&nbsp;<font color="#b0d0f0">plugin</font>&nbsp;<font color="#b0d0f0">on</font><br>
+<font color="#c0d8f8">filetype</font>&nbsp;<font color="#b0d0f0">indent</font>&nbsp;<font color="#b0d0f0">on</font><br>
+<br>
+<font color="#d0d090">&quot; Set to auto read when a file is changed from the outside</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">autoread</font><br>
+<br>
+<font color="#d0d090">&quot; With a map leader it's possible to do extra key combinations</font><br>
+<font color="#d0d090">&quot; like &lt;leader&gt;w saves the current file</font><br>
+<font color="#c0d8f8">let</font>&nbsp;mapleader&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#80c0e0">&quot;,&quot;</font><br>
+<font color="#c0d8f8">let</font>&nbsp;g:mapleader&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#80c0e0">&quot;,&quot;</font><br>
+<br>
+<font color="#d0d090">&quot; Fast saving</font><br>
+<font color="#c0d8f8">nmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>w&nbsp;:w!<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#d0d090">&quot; Fast editing of the .vimrc</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>e&nbsp;:e! ~/.vim_runtime/vimrc<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#d0d090">&quot; When vimrc is edited, reload it</font><br>
+<font color="#c0d8f8">autocmd</font>! <font color="#b0d0f0">bufwritepost</font>&nbsp;vimrc&nbsp;<font color="#c0d8f8">source</font>&nbsp;~/<font color="#c0d8f8">.</font>vim_runtime/vimrc<br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; VIM user interface</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; Set 7 lines to the curors - when moving vertical..</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">so</font>=7<br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">wildmenu</font>&nbsp;<font color="#d0d090">&quot;Turn on WiLd menu</font><br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">ruler</font>&nbsp;<font color="#d0d090">&quot;Always show current position</font><br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">cmdheight</font>=2&nbsp;<font color="#d0d090">&quot;The commandbar height</font><br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">hid</font>&nbsp;<font color="#d0d090">&quot;Change buffer - without saving</font><br>
+<br>
+<font color="#d0d090">&quot; Set backspace config</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">backspace</font>=eol<font color="#c0d8f8">,</font>start<font color="#c0d8f8">,</font>indent<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">whichwrap</font>+=<font color="#e0c060">&lt;</font><font color="#e0c060">,</font><font color="#e0c060">&gt;</font><font color="#c0d8f8">,</font>h<font color="#c0d8f8">,</font>l<br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">ignorecase</font>&nbsp;<font color="#d0d090">&quot;Ignore case when searching</font><br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">hlsearch</font>&nbsp;<font color="#d0d090">&quot;Highlight search things</font><br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">incsearch</font>&nbsp;<font color="#d0d090">&quot;Make search act like search in modern browsers</font><br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">magic</font>&nbsp;<font color="#d0d090">&quot;Set magic on, for regular expressions</font><br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">showmatch</font>&nbsp;<font color="#d0d090">&quot;Show matching bracets when text indicator is over them</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">mat</font>=2&nbsp;<font color="#d0d090">&quot;How many tenths of a second to blink</font><br>
+<br>
+<font color="#d0d090">&quot; No sound on errors</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">noerrorbells</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">novisualbell</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">t_vb</font>=<br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Colors and Fonts</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#c0d8f8">syntax</font>&nbsp;<font color="#b0d0f0">enable</font>&nbsp;<font color="#d0d090">&quot;Enable syntax hl</font><br>
+<br>
+<font color="#d0d090">&quot; Set font according to system</font><br>
+<font color="#c0d8f8">if</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;mac&quot;</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">gfn</font>=Bitstream\ Vera\ Sans\ Mono<font color="#c0d8f8">:</font>h13<br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">shell</font>=/bin/bash<br>
+<font color="#c0d8f8">elseif</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;windows&quot;</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">gfn</font>=Bitstream\ Vera\ Sans\ Mono<font color="#c0d8f8">:</font>h10<br>
+<font color="#c0d8f8">elseif</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;linux&quot;</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">gfn</font>=Monospace\ 10<br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">shell</font>=/bin/bash<br>
+<font color="#c0d8f8">endif</font><br>
+<br>
+<font color="#c0d8f8">if</font>&nbsp;<font color="#f0c0f0">has</font><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;gui_running&quot;</font><font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">guioptions</font>-=T<br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">background</font>=dark<br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">t_Co</font>=256<br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">background</font>=dark<br>
+&nbsp;&nbsp;<font color="#c0d8f8">colorscheme</font>&nbsp;peaksea<br>
+<br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">nu</font><br>
+<font color="#c0d8f8">else</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">colorscheme</font>&nbsp;zellner<br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">background</font>=dark<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">nonu</font><br>
+<font color="#c0d8f8">endif</font><br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">encoding</font>=utf8<br>
+<font color="#c0d8f8">try</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">lang</font>&nbsp;en_US<br>
+<font color="#c0d8f8">catch</font><br>
+<font color="#c0d8f8">endtry</font><br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">ffs</font>=unix<font color="#c0d8f8">,</font>dos<font color="#c0d8f8">,</font>mac&nbsp;<font color="#d0d090">&quot;Default file types</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Files and backups</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; Turn backup off, since most stuff is in SVN, git anyway...</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">nobackup</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">nowb</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">noswapfile</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Text, tab and indent related</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">expandtab</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">shiftwidth</font>=4<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">tabstop</font>=4<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">smarttab</font><br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">lbr</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">tw</font>=500<br>
+<br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">ai</font>&nbsp;<font color="#d0d090">&quot;Auto indent</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">si</font>&nbsp;<font color="#d0d090">&quot;Smart indet</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">wrap</font>&nbsp;<font color="#d0d090">&quot;Wrap lines</font><br>
+<br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>t2&nbsp;:setlocal shiftwidth=2<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>t4&nbsp;:setlocal shiftwidth=4<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>t8&nbsp;:setlocal shiftwidth=4<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Visual mode related</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; Really useful!</font><br>
+<font color="#d0d090">&quot;&nbsp;&nbsp;In visual mode when you press * or # to search for the current selection</font><br>
+<font color="#c0d8f8">vnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">silent</font><font color="#e0c060">&gt;</font>&nbsp;*&nbsp;:call VisualSearch('f')<font color="#e0c060">&lt;</font><font color="#e0c060">CR</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">vnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">silent</font><font color="#e0c060">&gt;</font>&nbsp;#&nbsp;:call VisualSearch('b')<font color="#e0c060">&lt;</font><font color="#e0c060">CR</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#d0d090">&quot; When you press gv you vimgrep after the selected text</font><br>
+<font color="#c0d8f8">vnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">silent</font><font color="#e0c060">&gt;</font>&nbsp;gv&nbsp;:call VisualSearch('gv')<font color="#e0c060">&lt;</font><font color="#e0c060">CR</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>g&nbsp;:vimgrep // **/*.<font color="#e0c060">&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;</font><br>
+<br>
+<br>
+<font color="#c0d8f8">function</font>! CmdLine<font color="#c0d8f8">(</font>str<font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">exe</font>&nbsp;<font color="#80c0e0">&quot;menu Foo.Bar :&quot;</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;a:str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">emenu</font>&nbsp;Foo<font color="#c0d8f8">.</font>Bar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">unmenu</font>&nbsp;Foo<br>
+<font color="#c0d8f8">endfunction</font>&nbsp;<br>
+<br>
+<font color="#d0d090">&quot; From an idea by Michael Naumann</font><br>
+<font color="#c0d8f8">function</font>! VisualSearch<font color="#c0d8f8">(</font>direction<font color="#c0d8f8">)</font>&nbsp;range<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;l:saved_reg&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#b0b0b0">@&quot;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">execute</font>&nbsp;<font color="#80c0e0">&quot;normal! vgvy&quot;</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;l:pattern&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">escape</font><font color="#c0d8f8">(</font><font color="#b0b0b0">@&quot;</font>, <font color="#80c0e0">'\\/.*$^~[]'</font><font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;l:pattern&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>l:pattern, <font color="#80c0e0">&quot;\n$&quot;</font>, <font color="#80c0e0">&quot;&quot;</font>, <font color="#80c0e0">&quot;&quot;</font><font color="#c0d8f8">)</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">if</font>&nbsp;<font color="#f0c0f0">a:direction</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">'b'</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">execute</font>&nbsp;<font color="#80c0e0">&quot;normal ?&quot;</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;l:pattern&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">&quot;^M&quot;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">elseif</font>&nbsp;<font color="#f0c0f0">a:direction</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">'gv'</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">call</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">CmdLine</font></span><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;vimgrep &quot;</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">'/'</font><font color="#c0d8f8">.</font>&nbsp;l:pattern <font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">'/'</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">' **/*.'</font><font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">elseif</font>&nbsp;<font color="#f0c0f0">a:direction</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">'f'</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">execute</font>&nbsp;<font color="#80c0e0">&quot;normal /&quot;</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;l:pattern&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">&quot;^M&quot;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">endif</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;@/ <font color="#c0d8f8">=</font>&nbsp;<font color="#c0d8f8">l</font>:pattern<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;<font color="#b0b0b0">@&quot;</font>&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#c0d8f8">l</font>:saved_reg<br>
+<font color="#c0d8f8">endfunction</font><br>
+<br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Command mode related</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; Smart mappings on the command line</font><br>
+<font color="#c0d8f8">cno</font>&nbsp;$h&nbsp;e ~/<br>
+<font color="#c0d8f8">cno</font>&nbsp;$d&nbsp;e ~/Desktop/<br>
+<font color="#c0d8f8">cno</font>&nbsp;$j&nbsp;e ./<br>
+<font color="#c0d8f8">cno</font>&nbsp;$c&nbsp;e <font color="#e0c060">&lt;</font><font color="#e0c060">C-</font><font color="#e0c060">\&gt;</font>eCurrentFileDir(&quot;e&quot;)<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#d0d090">&quot; $q is super useful when browsing on the command line</font><br>
+<font color="#c0d8f8">cno</font>&nbsp;$q&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-</font><font color="#e0c060">\&gt;</font>eDeleteTillSlash()<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#d0d090">&quot; Bash like keys for the command line</font><br>
+<font color="#c0d8f8">cnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-A</font><font color="#e0c060">&gt;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">Home</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">cnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-E</font><font color="#e0c060">&gt;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">End</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">cnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-K</font><font color="#e0c060">&gt;</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-U</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#c0d8f8">cnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-P</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">Up</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">cnoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-N</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">Down</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#d0d090">&quot; Useful on some European keyboards</font><br>
+<font color="#c0d8f8">map</font>&nbsp;½&nbsp;$<br>
+<font color="#c0d8f8">imap</font>&nbsp;½&nbsp;$<br>
+<font color="#c0d8f8">vmap</font>&nbsp;½&nbsp;$<br>
+<font color="#c0d8f8">cmap</font>&nbsp;½&nbsp;$<br>
+<br>
+<br>
+<font color="#c0d8f8">func</font>! Cwd<font color="#c0d8f8">()</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;cwd&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">getcwd</font><font color="#c0d8f8">()</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">return</font>&nbsp;<font color="#b0b0b0">&quot;e</font>&nbsp;<font color="#d0d090">&quot; . cwd </font><br>
+<font color="#c0d8f8">endfunc</font><br>
+<br>
+<font color="#c0d8f8">func</font>! DeleteTillSlash<font color="#c0d8f8">()</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;g:cmd&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">getcmdline</font><font color="#c0d8f8">()</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">if</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;linux&quot;</font>&nbsp;<font color="#c0d8f8">||</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;mac&quot;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;g:cmd_edited&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>g:cmd, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">(.*\[/\]</font><font color="#80c0e0">\\</font><font color="#80c0e0">).*&quot;</font>, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">1&quot;</font>, <font color="#80c0e0">&quot;&quot;</font><font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">else</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;g:cmd_edited&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>g:cmd, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">(.*\[</font><font color="#80c0e0">\\\\</font><font color="#80c0e0">]</font><font color="#80c0e0">\\</font><font color="#80c0e0">).*&quot;</font>, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">1&quot;</font>, <font color="#80c0e0">&quot;&quot;</font><font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">endif</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">if</font>&nbsp;g:cmd&nbsp;<font color="#c0d8f8">==</font>&nbsp;g:cmd_edited<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">if</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;linux&quot;</font>&nbsp;<font color="#c0d8f8">||</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;mac&quot;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;g:cmd_edited&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>g:cmd, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">(.*\[/\]</font><font color="#80c0e0">\\</font><font color="#80c0e0">).*/&quot;</font>, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">1&quot;</font>, <font color="#80c0e0">&quot;&quot;</font><font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">else</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;g:cmd_edited&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>g:cmd, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">(.*\[</font><font color="#80c0e0">\\\\</font><font color="#80c0e0">\]</font><font color="#80c0e0">\\</font><font color="#80c0e0">).*\[</font><font color="#80c0e0">\\\\</font><font color="#80c0e0">\]&quot;</font>, <font color="#80c0e0">&quot;</font><font color="#80c0e0">\\</font><font color="#80c0e0">1&quot;</font>, <font color="#80c0e0">&quot;&quot;</font><font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">endif</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">endif</font>&nbsp;&nbsp; <br>
+&nbsp;&nbsp;<font color="#c0d8f8">return</font>&nbsp;g:cmd_edited<br>
+<font color="#c0d8f8">endfunc</font><br>
+<br>
+<font color="#c0d8f8">func</font>! CurrentFileDir<font color="#c0d8f8">(</font>cmd<font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">return</font>&nbsp;<font color="#f0c0f0">a:cmd</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">&quot; &quot;</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#f0c0f0">expand</font><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;%:p:h&quot;</font><font color="#c0d8f8">)</font>&nbsp;<font color="#c0d8f8">.</font>&nbsp;<font color="#80c0e0">&quot;/&quot;</font><br>
+<font color="#c0d8f8">endfunc</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Moving around, tabs and buffers</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; Map space to / (search) and c-space to ? (backgwards search)</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">space</font><font color="#e0c060">&gt;</font>&nbsp;/<br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">c-space</font><font color="#e0c060">&gt;</font>&nbsp;?<br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">silent</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font><font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>&nbsp;:noh<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#d0d090">&quot; Smart way to move btw. windows</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-j</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-W</font><font color="#e0c060">&gt;</font>j<br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-k</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-W</font><font color="#e0c060">&gt;</font>k<br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-h</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-W</font><font color="#e0c060">&gt;</font>h<br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-l</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">C-W</font><font color="#e0c060">&gt;</font>l<br>
+<br>
+<font color="#d0d090">&quot; Close the current buffer</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>bd&nbsp;:Bclose<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#d0d090">&quot; Close all the buffers</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>ba&nbsp;:1,300 bd!<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#d0d090">&quot; Use the arrows to something usefull</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">right</font><font color="#e0c060">&gt;</font>&nbsp;:bn<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">left</font><font color="#e0c060">&gt;</font>&nbsp;:bp<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#d0d090">&quot; Tab configuration</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>tn&nbsp;:tabnew %<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>te&nbsp;:tabedit <br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>tc&nbsp;:tabclose<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>tm&nbsp;:tabmove <br>
+<br>
+<font color="#d0d090">&quot; When pressing &lt;leader&gt;cd switch to the directory of the open buffer</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>cd&nbsp;:cd %:p:h<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<br>
+<font color="#c0d8f8">command</font>! Bclose&nbsp;<font color="#c0d8f8">call</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">SID</font><font color="#e0c060">&gt;</font><span style="background-color: #202020"><font color="#d0d0d0">BufcloseCloseIt</font></span>()<br>
+<font color="#c0d8f8">function</font>! <font color="#e0c060">&lt;SID&gt;</font>BufcloseCloseIt<font color="#c0d8f8">()</font><br>
+&nbsp;&nbsp; <font color="#c0d8f8">let</font>&nbsp;l:currentBufNum&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">bufnr</font><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;%&quot;</font><font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp; <font color="#c0d8f8">let</font>&nbsp;l:alternateBufNum&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">bufnr</font><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;#&quot;</font><font color="#c0d8f8">)</font><br>
+<br>
+&nbsp;&nbsp; <font color="#c0d8f8">if</font>&nbsp;<font color="#f0c0f0">buflisted</font><font color="#c0d8f8">(</font>l:alternateBufNum<font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <font color="#c0d8f8">buffer</font>&nbsp;#<br>
+&nbsp;&nbsp; <font color="#c0d8f8">else</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <font color="#c0d8f8">bnext</font><br>
+&nbsp;&nbsp; <font color="#c0d8f8">endif</font><br>
+<br>
+&nbsp;&nbsp; <font color="#c0d8f8">if</font>&nbsp;<font color="#f0c0f0">bufnr</font><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;%&quot;</font><font color="#c0d8f8">)</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#c0d8f8">l</font>:currentBufNum<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <font color="#c0d8f8">new</font><br>
+&nbsp;&nbsp; <font color="#c0d8f8">endif</font><br>
+<br>
+&nbsp;&nbsp; <font color="#c0d8f8">if</font>&nbsp;<font color="#f0c0f0">buflisted</font><font color="#c0d8f8">(</font>l:currentBufNum<font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span style="background-color: #202020"><font color="#d0d0d0">execute</font></span><font color="#c0d8f8">(</font><font color="#80c0e0">&quot;bdelete! &quot;</font><font color="#c0d8f8">.</font>l:currentBufNum<font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp; <font color="#c0d8f8">endif</font><br>
+<font color="#c0d8f8">endfunction</font><br>
+<br>
+<font color="#d0d090">&quot; Specify the behavior when switching between buffers </font><br>
+<font color="#c0d8f8">try</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">switchbuf</font>=usetab<br>
+&nbsp;&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">stal</font>=2<br>
+<font color="#c0d8f8">catch</font><br>
+<font color="#c0d8f8">endtry</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Statusline</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; Always hide the statusline</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">laststatus</font>=2<br>
+<br>
+<font color="#d0d090">&quot; Format the statusline</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">statusline</font>=\ %F%m%r%h\ %w\ \ CWD<font color="#c0d8f8">:</font>\ %r%{CurDir()}%h\ \ \ Line<font color="#c0d8f8">:</font>\ %l/%L<font color="#c0d8f8">:</font>%c<br>
+<br>
+<br>
+<font color="#c0d8f8">function</font>! CurDir<font color="#c0d8f8">()</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">let</font>&nbsp;curdir&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>getcwd<font color="#c0d8f8">()</font>, <font color="#80c0e0">'/Users/amir/'</font>, <font color="#80c0e0">&quot;~/&quot;</font>, <font color="#80c0e0">&quot;g&quot;</font><font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">return</font>&nbsp;curdir<br>
+<font color="#c0d8f8">endfunction</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Parenthesis/bracket expanding</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#c0d8f8">vnoremap</font>&nbsp;$1&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&gt;a)<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&lt;i(<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">vnoremap</font>&nbsp;$2&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&gt;a]<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&lt;i[<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">vnoremap</font>&nbsp;$3&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&gt;a}<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&lt;i{<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">vnoremap</font>&nbsp;$$&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&gt;a&quot;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&lt;i&quot;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">vnoremap</font>&nbsp;$q&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&gt;a'<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&lt;i'<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">vnoremap</font>&nbsp;$e&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&gt;a&quot;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>`&lt;i&quot;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#d0d090">&quot; Map auto complete of (, &quot;, ', [</font><br>
+<font color="#c0d8f8">inoremap</font>&nbsp;$1&nbsp;()<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>i<br>
+<font color="#c0d8f8">inoremap</font>&nbsp;$2&nbsp;[]<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>i<br>
+<font color="#c0d8f8">inoremap</font>&nbsp;$3&nbsp;{}<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>i<br>
+<font color="#c0d8f8">inoremap</font>&nbsp;$4&nbsp;{<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>o}<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>O<br>
+<font color="#c0d8f8">inoremap</font>&nbsp;$q&nbsp;''<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>i<br>
+<font color="#c0d8f8">inoremap</font>&nbsp;$e&nbsp;&quot;&quot;<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>i<br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; General Abbrevs</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#c0d8f8">iab</font>&nbsp;xdate&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">c-r</font><font color="#e0c060">&gt;</font>=strftime(&quot;%d/%m/%y %H:%M:%S&quot;)<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Editing mappings</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot;Remap VIM 0</font><br>
+<font color="#c0d8f8">map</font>&nbsp;0&nbsp;^<br>
+<br>
+<font color="#d0d090">&quot;Move a line of text using ALT+[jk] or Comamnd+[jk] on mac</font><br>
+<font color="#c0d8f8">nmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-j</font><font color="#e0c060">&gt;</font>&nbsp;mz:m+<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>`z<br>
+<font color="#c0d8f8">nmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-k</font><font color="#e0c060">&gt;</font>&nbsp;mz:m-2<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>`z<br>
+<font color="#c0d8f8">vmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-j</font><font color="#e0c060">&gt;</font>&nbsp;:m'&gt;+<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>`&lt;my`&gt;mzgv`yo`z<br>
+<font color="#c0d8f8">vmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-k</font><font color="#e0c060">&gt;</font>&nbsp;:m'&lt;-2<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>`&gt;my`&lt;mzgv`yo`z<br>
+<br>
+<font color="#c0d8f8">if</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">MySys</font></span><font color="#c0d8f8">()</font>&nbsp;<font color="#c0d8f8">==</font>&nbsp;<font color="#80c0e0">&quot;mac&quot;</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">nmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">D-j</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-j</font><font color="#e0c060">&gt;</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">nmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">D-k</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-k</font><font color="#e0c060">&gt;</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">vmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">D-j</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-j</font><font color="#e0c060">&gt;</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">vmap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">D-k</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">M-k</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">endif</font><br>
+<br>
+<font color="#d0d090">&quot;Delete trailing white space, useful for Python ;)</font><br>
+<font color="#c0d8f8">func</font>! DeleteTrailingWS<font color="#c0d8f8">()</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">exe</font>&nbsp;<font color="#80c0e0">&quot;normal mz&quot;</font><br>
+&nbsp;&nbsp;<font color="#e0c060">%</font><font color="#c0d8f8">s</font><font color="#e0c060">/</font>\s\+$<font color="#e0c060">//</font><font color="#e0c060">ge</font><br>
+&nbsp;&nbsp;<font color="#c0d8f8">exe</font>&nbsp;<font color="#80c0e0">&quot;normal `z&quot;</font><br>
+<font color="#c0d8f8">endfunc</font><br>
+<font color="#c0d8f8">autocmd</font>&nbsp;<font color="#b0d0f0">BufWrite</font>&nbsp;*.py&nbsp;:<font color="#c0d8f8">call</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">DeleteTrailingWS</font></span><font color="#c0d8f8">()</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Cope</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; Do :help cope if you are unsure what cope is. It's super useful!</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>cc&nbsp;:botright cope<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>n&nbsp;:cn<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>p&nbsp;:cp<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; bufExplorer plugin</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#c0d8f8">let</font>&nbsp;g:bufExplorerDefaultHelp<font color="#c0d8f8">=</font><font color="#e0c060">0</font><br>
+<font color="#c0d8f8">let</font>&nbsp;g:bufExplorerShowRelativePath<font color="#c0d8f8">=</font><font color="#e0c060">1</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Minibuffer plugin</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#c0d8f8">let</font>&nbsp;g:miniBufExplModSelTarget&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">1</font><br>
+<font color="#c0d8f8">let</font>&nbsp;g:miniBufExplorerMoreThanOne&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">2</font><br>
+<font color="#c0d8f8">let</font>&nbsp;g:miniBufExplModSelTarget&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">0</font><br>
+<font color="#c0d8f8">let</font>&nbsp;g:miniBufExplUseSingleClick&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">1</font><br>
+<font color="#c0d8f8">let</font>&nbsp;g:miniBufExplMapWindowNavVim&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">1</font><br>
+<font color="#c0d8f8">let</font>&nbsp;g:miniBufExplVSplit&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">25</font><br>
+<font color="#c0d8f8">let</font>&nbsp;g:miniBufExplSplitBelow<font color="#c0d8f8">=</font><font color="#e0c060">1</font><br>
+<br>
+<font color="#c0d8f8">let</font>&nbsp;g:bufExplorerSortBy&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#80c0e0">&quot;name&quot;</font><br>
+<br>
+<font color="#c0d8f8">autocmd</font>&nbsp;<font color="#b0d0f0">BufRead</font>,<font color="#b0d0f0">BufNew</font>&nbsp;:call&nbsp;UMiniBufExplorer<br>
+<br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>u&nbsp;:TMiniBufExplorer<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>:TMiniBufExplorer<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Omni complete functions</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#c0d8f8">autocmd</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;css&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">omnifunc</font>=csscomplete#CompleteCSS<br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Spell checking</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot;Pressing ,ss will toggle and untoggle spell checking</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>ss&nbsp;:setlocal spell!<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
+<br>
+<font color="#d0d090">&quot;Shortcuts using &lt;leader&gt;</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>sn&nbsp;]s<br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>sp&nbsp;[s<br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>sa&nbsp;zg<br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>s?&nbsp;z=<br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Python section</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">nocindent</font><br>
+<font color="#c0d8f8">let</font>&nbsp;python_highlight_all&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#e0c060">1</font><br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">syn</font>&nbsp;<font color="#b0d0f0">keyword</font>&nbsp;pythonDecorator&nbsp;True None False self<br>
+<br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">BufNewFile</font>,<font color="#b0d0f0">BufRead</font>&nbsp;*.jinja&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">syntax</font>=htmljinja<br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">BufNewFile</font>,<font color="#b0d0f0">BufRead</font>&nbsp;*.mako&nbsp;<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">ft</font>=mako<br>
+<br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">inoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;$r&nbsp;return <br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">inoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;$i&nbsp;import <br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">inoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;$p&nbsp;print <br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">inoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;$f&nbsp;#--- PH ----------------------------------------------<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>FP2xi<br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>1&nbsp;/class <br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>2&nbsp;/def <br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>C&nbsp;?class <br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;python&nbsp;<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>D&nbsp;?def <br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; JavaScript section</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">call</font>&nbsp;<span style="background-color: #202020"><font color="#d0d0d0">JavaScriptFold</font></span><font color="#c0d8f8">()</font><br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">setl</font>&nbsp;<font color="#60f080">fen</font><br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">setl</font>&nbsp;<font color="#60f080">nocindent</font><br>
+<br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">imap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">c-t</font><font color="#e0c060">&gt;</font>&nbsp;AJS.log();<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>hi<br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">imap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">c-a</font><font color="#e0c060">&gt;</font>&nbsp;alert();<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>hi<br>
+<br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">inoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;$r&nbsp;return <br>
+<font color="#c0d8f8">au</font>&nbsp;<font color="#b0d0f0">FileType</font>&nbsp;javascript&nbsp;<font color="#c0d8f8">inoremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">buffer</font><font color="#e0c060">&gt;</font>&nbsp;$f&nbsp;//--- PH ----------------------------------------------<font color="#e0c060">&lt;</font><font color="#e0c060">esc</font><font color="#e0c060">&gt;</font>FP2xi<br>
+<br>
+<font color="#c0d8f8">function</font>! JavaScriptFold<font color="#c0d8f8">()</font>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">setl</font>&nbsp;<font color="#60f080">foldmethod</font>=syntax<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">setl</font>&nbsp;<font color="#60f080">foldlevelstart</font>=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;syn&nbsp;region&nbsp;foldBraces&nbsp;<font color="#c0d8f8">start</font><font color="#c0d8f8">=</font>/<font color="#e0c060">{</font>/ end<font color="#c0d8f8">=</font>/<font color="#e0c060">}</font>/ transparent&nbsp;<font color="#c0d8f8">fold</font>&nbsp;keepend&nbsp;extend<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">function</font>! FoldText<font color="#c0d8f8">()</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">return</font>&nbsp;<font color="#f0c0f0">substitute</font><font color="#c0d8f8">(</font>getline<font color="#c0d8f8">(</font>v:foldstart<font color="#c0d8f8">)</font>, <font color="#80c0e0">'{.*'</font>, <font color="#80c0e0">'{...}'</font>, <font color="#80c0e0">''</font><font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">endfunction</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">setl</font>&nbsp;<font color="#60f080">foldtext</font>=FoldText()<br>
+<font color="#c0d8f8">endfunction</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Fuzzy finder</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#c0d8f8">try</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">call</font>&nbsp;fuf#<span style="background-color: #202020"><font color="#d0d0d0">defineLaunchCommand</font></span><font color="#c0d8f8">(</font><font color="#80c0e0">'FufCWD'</font>, <font color="#80c0e0">'file'</font>, <font color="#80c0e0">'fnamemodify(getcwd(), ''%:p:h'')'</font><font color="#c0d8f8">)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>t&nbsp;:FufCWD **/<font color="#e0c060">&lt;</font><font color="#e0c060">CR</font><font color="#e0c060">&gt;</font><br>
+<font color="#c0d8f8">catch</font><br>
+<font color="#c0d8f8">endtry</font><br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; Vim grep</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#c0d8f8">let</font>&nbsp;Grep_Skip_Dirs&nbsp;<font color="#c0d8f8">=</font>&nbsp;<font color="#80c0e0">'RCS CVS SCCS .svn generated'</font><br>
+<font color="#c0d8f8">set</font>&nbsp;<font color="#60f080">grepprg</font>=/bin/grep\ -nH<br>
+<br>
+<br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; =&gt; MISC</font><br>
+<font color="#d0d090">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</font><br>
+<font color="#d0d090">&quot; Remove the Windows ^M - when the encodings gets messed up</font><br>
+<font color="#c0d8f8">noremap</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">Leader</font><font color="#e0c060">&gt;</font>m&nbsp;mmHmt:%s/<font color="#e0c060">&lt;</font><font color="#e0c060">C-V</font><font color="#e0c060">&gt;&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>//ge<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font>'tzt'm<br>
+<br>
+<font color="#d0d090">&quot;Quickly open a buffer for scripbble</font><br>
+<font color="#c0d8f8">map</font>&nbsp;<font color="#e0c060">&lt;</font><font color="#e0c060">leader</font><font color="#e0c060">&gt;</font>q&nbsp;:e ~/buffer<font color="#e0c060">&lt;</font><font color="#e0c060">cr</font><font color="#e0c060">&gt;</font><br>
 </font></body>
 </html>
