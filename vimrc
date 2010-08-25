@@ -2,7 +2,7 @@
 " Maintainer: amix the lucky stiff
 "             http://amix.dk - amix@amix.dk
 "
-" Version: 3.3 - 21/01/10 01:05:46
+" Version: 3.5 - 30/03/10 12:34:52
 "
 " Blog_post: 
 "       http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc
@@ -62,11 +62,13 @@
 "       Snippets for many languages (similar to TextMate's):
 "           info -> :help snipMate
 "
-"     > fuzzyfinder - http://www.vim.org/scripts/script.php?script_id=1984
-"       Find files fast (similar to TextMate's feature):
-"           info -> :help fuzzyfinder@en
+"     > mru.vim - http://www.vim.org/scripts/script.php?script_id=521
+"       Plugin to manage Most Recently Used (MRU) files:
+"           info -> :e ~/.vim_runtime/plugin/mru.vim
 "
 "  Revisions:
+"     > 3.5: Paste mode is now shown in status line  if you are in paste mode
+"     > 3.4: Added mru.vim
 "     > 3.3: Added syntax highlighting for Mako mako.vim 
 "     > 3.2: Turned on python_highlight_all for better syntax
 "            highlighting for Python
@@ -79,7 +81,7 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
-set history=300
+set history=700
 
 " Enable filetype plugin
 filetype plugin on
@@ -122,10 +124,12 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 set ignorecase "Ignore case when searching
+set smartcase
 
 set hlsearch "Highlight search things
 
 set incsearch "Make search act like search in modern browsers
+set nolazyredraw "Don't redraw while executing macros 
 
 set magic "Set magic on, for regular expressions
 
@@ -136,6 +140,7 @@ set mat=2 "How many tenths of a second to blink
 set noerrorbells
 set novisualbell
 set t_vb=
+set tm=500
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -145,7 +150,7 @@ syntax enable "Enable syntax hl
 
 " Set font according to system
 if MySys() == "mac"
-  set gfn=Bitstream\ Vera\ Sans\ Mono:h13
+  set gfn=Menlo:h14
   set shell=/bin/bash
 elseif MySys() == "windows"
   set gfn=Bitstream\ Vera\ Sans\ Mono:h10
@@ -156,12 +161,10 @@ endif
 
 if has("gui_running")
   set guioptions-=T
-  set background=dark
   set t_Co=256
   set background=dark
   colorscheme peaksea
-
-  set nu
+  set nonu
 else
   colorscheme zellner
   set background=dark
@@ -179,12 +182,24 @@ set ffs=unix,dos,mac "Default file types
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files and backups
+" => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git anyway...
 set nobackup
 set nowb
 set noswapfile
+
+"Persistent undo
+try
+    if MySys() == "windows"
+      set undodir=C:\Windows\Temp
+    else
+      set undodir=~/.vim_runtime/undodir
+    endif
+    
+    set undofile
+catch
+endtry
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -201,10 +216,6 @@ set tw=500
 set ai "Auto indent
 set si "Smart indet
 set wrap "Wrap lines
-
-map <leader>t2 :setlocal shiftwidth=2<cr>
-map <leader>t4 :setlocal shiftwidth=4<cr>
-map <leader>t8 :setlocal shiftwidth=4<cr>
 
 
 """"""""""""""""""""""""""""""
@@ -327,7 +338,7 @@ map <right> :bn<cr>
 map <left> :bp<cr>
 
 " Tab configuration
-map <leader>tn :tabnew %<cr>
+map <leader>tn :tabnew<cr>
 map <leader>te :tabedit 
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
@@ -371,12 +382,20 @@ endtry
 set laststatus=2
 
 " Format the statusline
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
 
 
 function! CurDir()
     let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
     return curdir
+endfunction
+
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    else
+        return ''
+    endif
 endfunction
 
 
@@ -397,6 +416,7 @@ inoremap $3 {}<esc>i
 inoremap $4 {<esc>o}<esc>O
 inoremap $q ''<esc>i
 inoremap $e ""<esc>i
+inoremap $t <><esc>i
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -432,6 +452,8 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 
+set guitablabel=%t
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Cope
@@ -447,6 +469,7 @@ map <leader>p :cp<cr>
 """"""""""""""""""""""""""""""
 let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1
+map <leader>o :BufExplorer<cr>
 
 
 """"""""""""""""""""""""""""""
@@ -464,7 +487,7 @@ let g:bufExplorerSortBy = "name"
 
 autocmd BufRead,BufNew :call UMiniBufExplorer
 
-map <leader>u :TMiniBufExplorer<cr>:TMiniBufExplorer<cr>
+map <leader>u :TMiniBufExplorer<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -489,7 +512,6 @@ map <leader>s? z=
 """"""""""""""""""""""""""""""
 " => Python section
 """"""""""""""""""""""""""""""
-au FileType python set nocindent
 let python_highlight_all = 1
 au FileType python syn keyword pythonDecorator True None False self
 
@@ -532,14 +554,19 @@ endfunction
 
 
 """"""""""""""""""""""""""""""
-" => Fuzzy finder
+" => MRU plugin
 """"""""""""""""""""""""""""""
-try
-    call fuf#defineLaunchCommand('FufCWD', 'file', 'fnamemodify(getcwd(), ''%:p:h'')')
-    map <leader>t :FufCWD **/<CR>
-catch
-endtry
+let MRU_Max_Entries = 400
+map <leader>f :MRU<CR>
 
+
+""""""""""""""""""""""""""""""
+" => Command-T
+""""""""""""""""""""""""""""""
+let g:CommandTMaxHeight = 15
+set wildignore+=*.o,*.obj,.git,*.pyc
+noremap <leader>j :CommandT<cr>
+noremap <leader>y :CommandTFlush<cr>
 
 """"""""""""""""""""""""""""""
 " => Vim grep
@@ -556,3 +583,8 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 "Quickly open a buffer for scripbble
 map <leader>q :e ~/buffer<cr>
+au BufRead,BufNewFile ~/buffer iab <buffer> xh1 ===========================================
+
+map <leader>pp :setlocal paste!<cr>
+
+map <leader>bb :cd ..<cr>
