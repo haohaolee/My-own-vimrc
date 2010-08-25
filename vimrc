@@ -11,7 +11,7 @@
 " Raw_version: 
 "       http://amix.dk/vim/vimrc.txt
 "
-" How_to_Install:
+" How_to_Install_on_Unix:
 "    $ mkdir ~/.vim_runtime
 "    $ svn co svn://orangoo.com/vim ~/.vim_runtime
 "    $ cat ~/.vim_runtime/install.sh
