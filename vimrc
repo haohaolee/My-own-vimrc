@@ -2,7 +2,7 @@
 " Maintainer: amix the lucky stiff
 "             http://amix.dk - amix@amix.dk
 "
-" Version: 3.5 - 30/03/10 12:34:52
+" Version: 3.6 - 25/08/10 14:40:30
 "
 " Blog_post: 
 "       http://amix.dk/blog/post/19486#The-ultimate-vim-configuration-vimrc
@@ -41,6 +41,7 @@
 "    -> Python section
 "    -> JavaScript section
 "
+"
 " Plugins_Included:
 "     > minibufexpl.vim - http://www.vim.org/scripts/script.php?script_id=159
 "       Makes it easy to get an overview of buffers:
@@ -66,7 +67,14 @@
 "       Plugin to manage Most Recently Used (MRU) files:
 "           info -> :e ~/.vim_runtime/plugin/mru.vim
 "
+"     > Command-T - http://www.vim.org/scripts/script.php?script_id=3025
+"       Command-T plug-in provides an extremely fast, intuitive mechanism for opening filesa:
+"           info -> :help CommandT
+"           screencast and web-help -> http://amix.dk/blog/post/19501
+"
+"
 "  Revisions:
+"     > 3.6: Added lots of stuff (colors, Command-T, Vim 7.3 persistent undo etc.)
 "     > 3.5: Paste mode is now shown in status line  if you are in paste mode
 "     > 3.4: Added mru.vim
 "     > 3.3: Added syntax highlighting for Mako mako.vim 
@@ -568,11 +576,13 @@ set wildignore+=*.o,*.obj,.git,*.pyc
 noremap <leader>j :CommandT<cr>
 noremap <leader>y :CommandTFlush<cr>
 
+
 """"""""""""""""""""""""""""""
 " => Vim grep
 """"""""""""""""""""""""""""""
 let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
 set grepprg=/bin/grep\ -nH
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
