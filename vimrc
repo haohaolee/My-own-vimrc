@@ -272,7 +272,7 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Smart mappings on the command line
 cno $h e ~/
-cno $d e ~/Desktop/
+cno $d c <C-\>eCurrentFileDir("e")<cr>
 cno $j e ./
 cno $c e <C-\>eCurrentFileDir("e")<cr>
 
@@ -346,7 +346,7 @@ map <right> :bn<cr>
 map <left> :bp<cr>
 
 " Tab configuration
-map <leader>tn :tabnew<cr>
+map <leader>tn :tabnew! %<cr>
 map <leader>te :tabedit 
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
@@ -555,7 +555,7 @@ function! JavaScriptFold()
     syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
 
     function! FoldText()
-    return substitute(getline(v:foldstart), '{.*', '{...}', '')
+        return substitute(getline(v:foldstart), '{.*', '{...}', '')
     endfunction
     setl foldtext=FoldText()
 endfunction
@@ -598,3 +598,7 @@ au BufRead,BufNewFile ~/buffer iab <buffer> xh1 ================================
 map <leader>pp :setlocal paste!<cr>
 
 map <leader>bb :cd ..<cr>
+
+map <leader>ct :cd ~/Desktop/Todoist/todoist<cr>
+map <leader>cw :cd ~/Desktop/Wedoist/wedoist<cr>
+map <leader>cp :cd ~/Desktop/Plurk/trunk/plurk<cr>
