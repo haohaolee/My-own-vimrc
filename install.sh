@@ -1,5 +1,7 @@
 if [ "$1" == "" ]; then
-  echo "Usage: sh .vim_runtime/install <system>"
+  echo ""
+  echo "Usage to install amix's vimrc:"
+  echo "       sh .vim_runtime/install <system>"
   echo "       <system> can be 'mac', 'linux' or 'windows'"
   exit 1
 fi
