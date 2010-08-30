@@ -106,11 +106,19 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
-" Fast editing of the .vimrc
-map <leader>e :e! ~/.vim_runtime/vimrc<cr>
+if MySys() == "windows"
+    " Fast editing of the .vimrc
+    map <leader>e :e! ~/_vim_runtime/vimrc<cr>
 
-" When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+    " When vimrc is edited, reload it
+    autocmd! bufwritepost vimrc source ~/_vim_runtime/vimrc
+else
+    " Fast editing of the .vimrc
+    map <leader>e :e! ~/.vim_runtime/vimrc<cr>
+
+    " When vimrc is edited, reload it
+    autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
