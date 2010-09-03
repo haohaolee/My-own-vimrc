@@ -18,7 +18,7 @@ endif
 
 map <buffer> F :call ToggleFold()<CR>
 
-set foldcolumn=1
+setl foldcolumn=1
 
 let w:nestinglevel = 0
 let w:signature = 0
@@ -201,7 +201,7 @@ function! ToggleFold()
     let w:signature = 0
 
     if w:is_folded
-        set foldexpr=0
+        setl foldexpr=0
         let w:is_folded = 0
     else
         call ReFold()
@@ -216,25 +216,25 @@ endfunction
 
 " In case folding breaks down
 function! ReFold()
-    set foldmethod=expr
-    set foldexpr=0
-    set foldmethod=expr
+    setl foldmethod=expr
+    setl foldexpr=0
+    setl foldmethod=expr
     if g:ifold_mode == 0
-        set foldexpr=GetPythonFold(v:lnum)
+        setl foldexpr=GetPythonFold(v:lnum)
     else
         if g:ifold_mode == 1
-            set foldexpr=GetPythonFoldBest(v:lnum)
+            setl foldexpr=GetPythonFoldBest(v:lnum)
         else
             if g:ifold_mode == 2
-                set foldexpr=GetPythonFoldExperimental(v:lnum)
+                setl foldexpr=GetPythonFoldExperimental(v:lnum)
             endif
         endif
     endif
 
     if g:ifold_mode
-        set foldtext=PythonFoldText()
+        setl foldtext=PythonFoldText()
     else
-        set foldtext='Folded\ code'
+        setl foldtext='Folded\ code'
     endif
     echo
 endfunction

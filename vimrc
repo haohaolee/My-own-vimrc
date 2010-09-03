@@ -237,24 +237,32 @@ set wrap "Wrap lines
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
-" Really useful!
+" NOTICE: Really useful!
+
 "  In visual mode when you press * or # to search for the current selection
-vnoremap <silent> * :call VisualSearch('f')<CR>
-vnoremap <silent> # :call VisualSearch('b')<CR>
+vnoremap <silent> * :call VisualSelection('f')<CR>
+vnoremap <silent> # :call VisualSelection('b')<CR>
 
 " When you press gv you vimgrep after the selected text
-vnoremap <silent> gv :call VisualSearch('gv')<CR>
+vnoremap <silent> gv :call VisualSelection('gv')<CR>
+
+" Some useful keys for vimgrep
 map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
+map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
 
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
+"
+" From an idea by Michael Naumann
+" 
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
     unmenu Foo
 endfunction 
 
-" From an idea by Michael Naumann
-function! VisualSearch(direction) range
+function! VisualSelection(direction) range
     let l:saved_reg = @"
     execute "normal! vgvy"
 
@@ -265,6 +273,8 @@ function! VisualSearch(direction) range
         execute "normal ?" . l:pattern . "^M"
     elseif a:direction == 'gv'
         call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
     elseif a:direction == 'f'
         execute "normal /" . l:pattern . "^M"
     endif
@@ -485,7 +495,7 @@ map <leader>p :cp<cr>
 """"""""""""""""""""""""""""""
 let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1
-map <leader>o :BufExplorer<cr>
+map <leader>o :BufExplorer<cr>/
 
 
 """"""""""""""""""""""""""""""
