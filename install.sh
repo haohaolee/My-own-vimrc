@@ -1,14 +1,17 @@
 if [ "$1" == "" ]; then
   echo ""
   echo "Usage to install amix's vimrc:"
-  echo "   sh .vim_runtime/install.sh <system>"
-  echo "      - where <system> can be 'mac', 'linux' or 'windows'"
+  echo "   sh .vim/install.sh <system>"
+  echo "      - where <system> can be 'mac' or 'linux'"
   exit 1
 fi
-echo '
+
+cat > ~/.vimrc <<EOF
 fun! MySys()
-   return "$1"
+return "$1"
 endfun
-source ~/.vim_runtime/vimrc
-helptags ~/.vim_runtime/doc' > ~/.vimrc
+source ~/.vim/vimrc
+helptags ~/.vim/doc
+EOF
+
 echo "Installed amix's vim configuration successfully! Enjoy :)"

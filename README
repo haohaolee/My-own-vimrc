@@ -3,7 +3,7 @@ note that the install.sh cannot be used on windows (maybe available on cygwin)
 step:
 1. git clone http://github.com/haohaolee/My-own-vimrc.git ~/.vim        on linux OR
    git clone http://github.com/haohaolee/My-own-vimrc.git ~/vimfiles    on Windows "~" points to %userprofile%
-2. run sh ~/.vim/install.sh linux          on linux to install OR
+2. run bash ~/.vim/install.sh linux          on linux to install OR
    manally create a _vimrc in %userprofile% dir and write
 BEGIN============================================================
 fun! MySys()
