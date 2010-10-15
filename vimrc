@@ -108,16 +108,16 @@ nmap <leader>w :w!<cr>
 
 if MySys() == "windows"
     " Fast editing of the .vimrc
-    map <leader>e :e! ~/_vim_runtime/vimrc<cr>
+    map <leader>e :e! ~/vimfiles/vimrc<cr>
 
     " When vimrc is edited, reload it
-    autocmd! bufwritepost vimrc source ~/_vim_runtime/vimrc
+    autocmd! bufwritepost vimrc source ~/vimfiles/vimrc
 else
     " Fast editing of the .vimrc
-    map <leader>e :e! ~/.vim_runtime/vimrc<cr>
+    map <leader>e :e! ~/.vim/vimrc<cr>
 
     " When vimrc is edited, reload it
-    autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
+    autocmd! bufwritepost vimrc source ~/.vim/vimrc
 endif
 
 
@@ -169,13 +169,14 @@ if MySys() == "mac"
   set gfn=Menlo:h14
   set shell=/bin/bash
 elseif MySys() == "windows"
-  set gfn=Bitstream\ Vera\ Sans\ Mono:h10
+  set gfn=Consolas:h14:cANSI
 elseif MySys() == "linux"
   set gfn=Monospace\ 10
   set shell=/bin/bash
 endif
 
 if has("gui_running")
+  set guioptions-=m
   set guioptions-=T
   set t_Co=256
   set background=dark
@@ -188,7 +189,14 @@ else
   set nonu
 endif
 
+" Set the vim encoding and fileencoding to utf-8
 set encoding=utf8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,chinese,taiwan,japan,korea,utf-8,latin1
+
+" always set the menu and message to English
+:let $LANG = 'en'
+
 try
     lang en_US
 catch
@@ -210,7 +218,7 @@ try
     if MySys() == "windows"
       set undodir=C:\Windows\Temp
     else
-      set undodir=~/.vim_runtime/undodir
+      set undodir=~/.vim/undodir
     endif
     
     set undofile
@@ -306,10 +314,10 @@ cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
 " Useful on some European keyboards
-map ½ $
-imap ½ $
-vmap ½ $
-cmap ½ $
+map 陆 $
+imap 陆 $
+vmap 陆 $
+cmap 陆 $
 
 
 func! Cwd()
@@ -620,3 +628,9 @@ map <leader>bb :cd ..<cr>
 map <leader>ct :cd ~/Desktop/Todoist/todoist<cr>
 map <leader>cw :cd ~/Desktop/Wedoist/wedoist<cr>
 map <leader>cp :cd ~/Desktop/Plurk/trunk/plurk<cr>
+
+
+" Call the pathogen plugin
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
