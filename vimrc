@@ -202,6 +202,8 @@ set fileencodings=ucs-bom,chinese,taiwan,japan,korea,utf-8,latin1
 
 " always set the message to English
 :let $LANG = 'en'
+
+" rebuild the menu
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
