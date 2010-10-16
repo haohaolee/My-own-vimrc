@@ -1,0 +1,3 @@
+[submodule "bundle/mru"]
+	path = bundle/mru
+	url = http://github.com/vim-scripts/mru.vim.git

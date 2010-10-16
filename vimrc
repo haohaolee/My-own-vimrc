@@ -1,6 +1,7 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+﻿"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: amix the lucky stiff
 "             http://amix.dk - amix@amix.dk
+" Modifer: hayate (hayatelee@gmail.com)
 "
 " Version: 3.6 - 25/08/10 14:40:30
 "
@@ -120,6 +121,11 @@ else
     autocmd! bufwritepost vimrc source ~/.vim/vimrc
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Active Pathogen plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -169,7 +175,7 @@ if MySys() == "mac"
   set gfn=Menlo:h14
   set shell=/bin/bash
 elseif MySys() == "windows"
-  set gfn=Consolas:h14:cANSI
+  set gfn=Consolas:h14:cANSI,\ Bitstream\ Vera\ Sans\ Mono:h10
 elseif MySys() == "linux"
   set gfn=Monospace\ 10
   set shell=/bin/bash
@@ -190,12 +196,14 @@ else
 endif
 
 " Set the vim encoding and fileencoding to utf-8
-set encoding=utf8
+set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,chinese,taiwan,japan,korea,utf-8,latin1
 
-" always set the menu and message to English
+" always set the message to English
 :let $LANG = 'en'
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
 
 try
     lang en_US
@@ -314,10 +322,10 @@ cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
 " Useful on some European keyboards
-map 陆 $
-imap 陆 $
-vmap 陆 $
-cmap 陆 $
+map ½ $
+imap ½ $
+vmap ½ $
+cmap ½ $
 
 
 func! Cwd()
@@ -629,8 +637,4 @@ map <leader>ct :cd ~/Desktop/Todoist/todoist<cr>
 map <leader>cw :cd ~/Desktop/Wedoist/wedoist<cr>
 map <leader>cp :cd ~/Desktop/Plurk/trunk/plurk<cr>
 
-
-" Call the pathogen plugin
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 
