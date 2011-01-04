@@ -164,6 +164,8 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Display Line numbers
+set number
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -187,12 +189,10 @@ if has("gui_running")
   set t_Co=256
   set background=dark
   colorscheme peaksea
-  set nonu
 else
   colorscheme zellner
   set background=dark
   
-  set nonu
 endif
 
 " Set the vim encoding and fileencoding to utf-8
