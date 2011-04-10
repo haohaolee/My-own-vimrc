@@ -4,3 +4,6 @@
 [submodule "bundle/fencview"]
 	path = bundle/fencview
 	url = http://github.com/vim-scripts/FencView.vim.git
+[submodule "bundle/blogit.vim"]
+	path = bundle/blogit.vim
+	url = https://github.com/vim-scripts/blogit.vim.git
