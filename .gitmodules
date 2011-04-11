@@ -4,6 +4,12 @@
 [submodule "bundle/fencview"]
 	path = bundle/fencview
 	url = http://github.com/vim-scripts/FencView.vim.git
+<<<<<<< HEAD
 [submodule "bundle/UltraBlog"]
 	path = bundle/UltraBlog
 	url = https://github.com/vim-scripts/UltraBlog.git
+=======
+[submodule "bundle/blogit.vim"]
+	path = bundle/blogit.vim
+	url = https://github.com/vim-scripts/blogit.vim.git
+>>>>>>> e2b90a7a14b93fe87c720d92976eb69e55760816
