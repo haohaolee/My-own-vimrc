@@ -635,8 +635,4 @@ map <leader>pp :setlocal paste!<cr>
 
 map <leader>bb :cd ..<cr>
 
-map <leader>ct :cd ~/Desktop/Todoist/todoist<cr>
-map <leader>cw :cd ~/Desktop/Wedoist/wedoist<cr>
-map <leader>cp :cd ~/Desktop/Plurk/trunk/plurk<cr>
-
 
