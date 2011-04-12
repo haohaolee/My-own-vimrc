@@ -85,6 +85,12 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Active Pathogen plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -93,6 +99,7 @@
 set history=700
 
 " Enable filetype plugin
+filetype on
 filetype plugin on
 filetype indent on
 
@@ -120,12 +127,6 @@ else
     " When vimrc is edited, reload it
     autocmd! bufwritepost vimrc source ~/.vim/vimrc
 endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Active Pathogen plugin
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -635,4 +636,16 @@ map <leader>pp :setlocal paste!<cr>
 
 map <leader>bb :cd ..<cr>
 
+"""""""""""""""""""""""""""""
+" pydoc path
+if MySys() == "windows"
+    let g:pydoc_cmd = "python C:/Python27/Lib/pydoc.py"
+endif
+
+"""""""""""""""""""""""""""""
+"" TagBar
+
+nmap <silent> <F4> :TagbarToggle<CR>
+    let g:tagbar_ctags_bin = 'ctags'
+    let g:tagbar_width = 30
 

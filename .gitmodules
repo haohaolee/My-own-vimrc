@@ -7,3 +7,16 @@
 [submodule "bundle/UltraBlog"]
 	path = bundle/UltraBlog
 	url = https://github.com/vim-scripts/UltraBlog.git
+	ignore = untracked
+[submodule "bundle/pyflakes-vim"]
+	path = bundle/pyflakes-vim
+	url = https://github.com/vim-scripts/pyflakes.vim.git
+	ignore = untracked
+[submodule "bundle/pydoc-vim"]
+	path = bundle/pydoc-vim
+	url = https://github.com/vim-scripts/pydoc.vim.git
+[submodule "bundle/Tagbar"]
+	path = bundle/Tagbar
+	url = https://github.com/vim-scripts/Tagbar.git
+	ignore = untracked
+
