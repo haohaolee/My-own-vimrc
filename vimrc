@@ -182,6 +182,9 @@ elseif MySys() == "windows"
 elseif MySys() == "linux"
   set gfn=Monospace\ 10
   set shell=/bin/bash
+elseif MySys() == "freebsd"
+  set gfn=Monospace\ 10
+  set shell=/bin/sh
 endif
 
 if has("gui_running")
@@ -338,13 +341,13 @@ endfunc
 
 func! DeleteTillSlash()
   let g:cmd = getcmdline()
-  if MySys() == "linux" || MySys() == "mac"
+  if MySys() == "linux" || MySys() == "mac" || MySys() == "freebsd"
     let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*", "\\1", "")
   else
     let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\]\\).*", "\\1", "")
   endif
   if g:cmd == g:cmd_edited
-    if MySys() == "linux" || MySys() == "mac"
+    if MySys() == "linux" || MySys() == "mac" || MySys() == "freebsd"
       let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
     else
       let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\\]\\).*\[\\\\\]", "\\1", "")

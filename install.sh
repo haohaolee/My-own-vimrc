@@ -2,7 +2,7 @@ if [ "$1" == "" ]; then
   echo ""
   echo "Usage to install amix's vimrc:"
   echo "   sh .vim/install.sh <system>"
-  echo "      - where <system> can be 'mac' or 'linux'"
+  echo "      - where <system> can be 'mac', 'linux' or 'freebsd'"
   exit 1
 fi
 
