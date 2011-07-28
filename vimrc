@@ -328,10 +328,10 @@ cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
 
 " Useful on some European keyboards
-map ½ $
-imap ½ $
-vmap ½ $
-cmap ½ $
+"map ½ $
+"imap ½ $
+"vmap ½ $
+"cmap ½ $
 
 
 func! Cwd()
@@ -648,8 +648,8 @@ endif
 """""""""""""""""""""""""""""
 "" TagBar
 
-nmap <silent> <F4> :TagbarToggle<CR>
-    let g:tagbar_ctags_bin = 'ctags'
-    let g:tagbar_left = 1
-    let g:tagbar_width = 30
+nmap <Leader><Tab> :TagbarToggle<CR>
+let g:tagbar_ctags_bin = 'ctags'
+let g:tagbar_left = 1
+let g:tagbar_width = 30
 
