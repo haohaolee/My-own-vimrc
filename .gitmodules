@@ -46,3 +46,8 @@
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = https://github.com/vim-scripts/matchit.zip.git
+	ignore = dirty
+
+[submodule "bundle/a.vim"]
+	path = bundle/a.vim
+	url = https://github.com/vim-scripts/a.vim.git
