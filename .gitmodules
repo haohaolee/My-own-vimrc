@@ -48,3 +48,12 @@
 [submodule "bundle/a.vim"]
 	path = bundle/a.vim
 	url = https://github.com/vim-scripts/a.vim.git
+[submodule "bundle/NERD-tree"]
+	path = bundle/NERD-tree
+	url = https://github.com/vim-scripts/The-NERD-tree.git
+	ignore = dirty
+[submodule "bundle/repeat"]
+	path = bundle/repeat
+	url = https://github.com/vim-scripts/repeat.vim.git
+	ignore = dirty
+

@@ -636,3 +636,7 @@ let g:tagbar_ctags_bin = 'ctags'
 let g:tagbar_left = 1
 let g:tagbar_width = 30
 
+"""""""""""""""""""""""""""""
+""" NERD-tree
+nmap <Leader>u :NERDTreeToggle<CR>
+
