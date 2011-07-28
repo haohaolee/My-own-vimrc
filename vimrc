@@ -650,5 +650,6 @@ endif
 
 nmap <silent> <F4> :TagbarToggle<CR>
     let g:tagbar_ctags_bin = 'ctags'
+    let g:tagbar_left = 1
     let g:tagbar_width = 30
 
