@@ -57,3 +57,8 @@
 	url = https://github.com/vim-scripts/repeat.vim.git
 	ignore = dirty
 
+[submodule "bundle/SuperTab-continued"]
+	path = bundle/SuperTab-continued
+	url = https://github.com/vim-scripts/SuperTab-continued..git
+	ignore = dirty
+

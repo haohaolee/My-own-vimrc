@@ -90,7 +90,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off
 call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+"call pathogen#helptags()
+command GenHelpTags :call pathogen#helptags()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
