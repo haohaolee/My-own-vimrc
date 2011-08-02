@@ -91,7 +91,7 @@
 filetype off
 call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
-command GenHelpTags :call pathogen#helptags()
+command! GenHelpTags :call pathogen#helptags()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -480,6 +480,12 @@ iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 "Remap VIM 0
 map 0 ^
 
+"remap Meta on xterm
+if &term =~ "xterm" || &term =~ "screen"
+   set <M-j>=j
+   set <M-k>=k
+endif
+
 "Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
@@ -634,7 +640,7 @@ endif
 
 nmap <Leader><Tab> :TagbarToggle<CR>
 let g:tagbar_ctags_bin = 'ctags'
-let g:tagbar_left = 1
+let g:tagbar_left = 0
 let g:tagbar_width = 30
 
 """""""""""""""""""""""""""""
