@@ -62,3 +62,9 @@
 	url = https://github.com/vim-scripts/SuperTab-continued..git
 	ignore = dirty
 
+[submodule "bundle/Tumble"]
+	path = bundle/Tumble
+	url = https://github.com/vim-scripts/Tumble.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
